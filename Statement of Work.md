@@ -8,7 +8,7 @@ Statement of Work
 * Mallory Guerdet-Schuster
 
 # Project Objective
-* *[Briefly describe the goal of the project. Could you tell me what problem you are trying to solve or what functional you hope to achieve?]*
+* When it comes to the idea behind this game we wanted to bring the viral snake game to be one that you could play co-op with a friend or against that said friend. We wanted to have the two fight to see who could get the most apples and the scoreboard would change as one ate more apples during a set time limit. 
 
 # Scope:
 ## Inclusions:
@@ -25,11 +25,16 @@ Statement of Work
 
 ## Key Milestones:
 | Info | Dates | Is It Done |
-| -- |  --  |  -- |
+| sprint 0 |  09/22/24  |  -- |
+| sprint 1 |  10/06/24  |  -- |
+| sprint 2 |  10/20/24  |  -- |
+| sprint 3 |  11/03/24  |  -- |
+| sprint 4 |  11/17/24  |  -- |
+| sprint 5 |  12/06/24  |  -- |
 
 ## Task Breakdowns:
 | Task | details | estimate of length of time to complete |
-| -- |  --  |  -- |
+| setting up the files |  --  |  10 minutes max |
 
 # Technical Requirements
 
