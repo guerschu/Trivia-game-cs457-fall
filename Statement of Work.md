@@ -25,6 +25,7 @@ Statement of Work
 
 ## Key Milestones:
 | Info | Dates | Is It Done |
+|------|------|---------|
 | sprint 0 |  09/22/24  |  -- |
 | sprint 1 |  10/06/24  |  -- |
 | sprint 2 |  10/20/24  |  -- |
@@ -34,6 +35,7 @@ Statement of Work
 
 ## Task Breakdowns:
 | Task | details | estimate of length of time to complete |
+|-----|---|------|
 | setting up the files |  --  |  10 minutes max |
 
 # Technical Requirements
