@@ -67,7 +67,7 @@ Statement of Work
 * We will be using Visual Studio Code in Python
 * standard Libraries as of now, including sockets, threading, and more.
 
-#Assumptions:
+##Assumptions:
 *State any assumptions that are being made about the project, such as network connectivity or availability or resources*
 
 # Roles and Responsibilities:
