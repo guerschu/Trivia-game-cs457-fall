@@ -63,22 +63,23 @@ Statement of Work
 *
 
 ## Software
-*[List the necessary software tools, programming languages (Python), libraries (socket, threading, etc.), and operating systems.*
+*List the necessary software tools, programming languages (Python), libraries (socket, threading, etc.), and operating systems.*
 * We will be using Visual Studio Code in Python
 * standard Libraries as of now, including sockets, threading, and more.
 
 # Assumptions:
 *State any assumptions that are being made about the project, such as network connectivity or availability or resources*
+* Current assumptions are that there will be one or two players connected to one server, and that a server will be readily available to the client
 
 # Roles and Responsibilities:
 * *Define team members' roles, including project manager, developers, testers, etc., and their responsibilities.*
-
+* There are two current team members. Both team members will perform agile based testing while continuously integrating tests for the code
 # Communication Plan:
 * *Outline the communication channels and frequency for project updates, meetings, and decision-making.*
-
+* Both team members communicate via MS Teams and will base the project in agile based project management, using scrums to organize each sprint.
 # Additional Notes:
 * *Include any other relevant information or consideration that are specific to your project*
-
+* This projects scope has been based around the availabilty and bandwidth of both team members
 
 
 
