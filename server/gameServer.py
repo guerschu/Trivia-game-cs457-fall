@@ -14,6 +14,26 @@ def acceptWrapper(newSocket):
     sel.register(conn, events, data=data)
 
 
+# subroutine to service client for read or write
+
+def serviceClient(key, mask):
+    workSocket = key.fileobj
+    data = key.data
+    if mask & selectors.EVENT_READ:
+        recvData = workSocket.recv(1024) #sets up to read
+        if recvData:
+            data.outb += recvData
+        else:
+            print("Ending connection to: ", data.addr)
+            sel.unregister(workSocket)
+            workSocket.close()
+    else:
+        if data.outb:
+            print("Echoing to client: ", repr(data.outb), "client is: ", data.addr)
+            sent = workSocket.send(data.outb) #sets up to write
+            data.outb = data.outb[sent:]
+
+
 # main server program
 host = '0.0.0.0'
 port = 60001 # 60000 + 1 for pizzaz -mallory
