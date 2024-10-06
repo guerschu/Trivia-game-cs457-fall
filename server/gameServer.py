@@ -55,11 +55,9 @@ try:
         events = sel.select(timeout=None)
         for key, mask in events:
             if key.data is None:
-                # implment accecptWrapper
-                print("Accept")
+                acceptWrapper(key.fileobj)
             else:
-                # implement service connection
-                print("service")
+                serviceClient(key, mask)
 except KeyboardInterrupt:
     print("Service interupted by admin, exiting...")
 finally:
