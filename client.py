@@ -4,26 +4,25 @@ import selectors
 import types
 
 
-selectorsVar = selectors.DefaultSelector()
-message = [b"Got it to work, testing connection", b"Message 2 Ready To Play Game?"]
+selVar = selectors.DefaultSelector()
+messageClient = [b"Got it to work, testing connection", b"Message 2 Ready To Play Game?"]
 
 def startConnectionClient(host, port, num_conns):
-    server_addres = (host, ports)
+    server_addres = (host, port)
     for i in range(0, num_conns):
         connectionNum = i+1
         print("Starting the connection", connectionNum, "to", server_addres)
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        sock.setblocking(false)
+        sock.setblocking(False)
         sock.connect_ex(server_addres)
         event = selectors.EVENT_READ | selectors.EVENT_WRITE
-        dataEntre = types.SimpleNamespace(
-            connectionNum = connectionNum
+        dataEntre = types.SimpleNamespace(connectionNum = connectionNum,
             msgTotal=sum(len(m) for m in messageClient),
             recvTotal=0,
             messageClient=list(messageClient),
             outB=b"",
         )
-        selVar.register(sock, events, dataVar=dataVar)
+        selVar.register(sock, event, dataEntre=dataEntre)
 
 #this should be triggered when it is a read or wirte event, making sure it actually does them
 def ServiceConnectClient(key, mask):
@@ -33,8 +32,8 @@ def ServiceConnectClient(key, mask):
         recvData = sock.recv(1024) # makes it able to read
         if recvData:
             print("Recieved", repr(recvData), "from the connection", dataEntre.connectionNum)
-            dataEntre.recv_total += len(recvData)
-            if not recvData or dataEntre.recv_total == dataEntre.msg_total:
+            dataEntre.recvTotal += len(recvData)
+            if not recvData or dataEntre.recvTotal == dataEntre.msgTotal:
                 print("Closing the Connection", dataEntre.connectionNum)
                 selVar.unregistered(sock)
                 sock.close()
@@ -55,14 +54,14 @@ numConns = 10
 startConnectionClient(host, port, numConns)
 
 try:
-    while true:
+    while True:
         eventTest = selVar.select(timeout=1)
         if eventTest:
             for key, mask, in eventTest:
                 ServiceConnectClient(key, mask)
         if not selVar.get_map():
             break
-exept Keyboardinterrupt:
+except KeyboardInterrupt:
     print("Caught keyboard interruption, exiting, User terminated program")
 finally:
     selVar.close()
