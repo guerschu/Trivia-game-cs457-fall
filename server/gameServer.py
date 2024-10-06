@@ -1,6 +1,18 @@
 import selectors
 import socket
+import types
 sel = selectors.DefaultSelector()
+
+# accept wrapper routine, when lSocket gets request to connect
+
+def acceptWrapper(newSocket):
+    conn, addr = newSocket.accept()
+    print("Connection from client at: ", addr)
+    conn.setBlocking(False)
+    data = types.SimpleNamespace(addr=addr, inb=b"", outb=b"")
+    events = selectors.EVENT_READ | selectors.EVENT_WRITE
+    sel.register(conn, events, data=data)
+
 
 # main server program
 host = '0.0.0.0'
