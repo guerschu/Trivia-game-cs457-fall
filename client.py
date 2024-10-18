@@ -3,7 +3,7 @@ import socket
 import selectors
 import types
 
-import libclient.py
+import libclient
 
 selVar = selectors.DefaultSelector()
 # messageClient = [b"Got it to work, testing connection", b" Message 2 Ready To Play Game?"]
