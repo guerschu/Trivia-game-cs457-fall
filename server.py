@@ -1,67 +1,64 @@
-import sys
-import socket
 import selectors
+import socket
 import types
+sel = selectors.DefaultSelector()
+
+# accept wrapper routine, when lSocket gets request to connect
+
+def acceptWrapper(newSocket):
+    conn, addr = newSocket.accept()
+    print("Connection from client at: ", addr)
+    conn.setBlocking(False)
+    data = types.SimpleNamespace(addr=addr, inb=b"", outb=b"")
+    events = selectors.EVENT_READ | selectors.EVENT_WRITE
+    sel.register(conn, events, data=data)
 
 
-selVar = selectors.DefaultSelector()
-messageClient = [b"Got it to work, testing connection", b"Message 2 Ready To Play Game?"]
+# subroutine to service client for read or write
 
-def startConnectionClient(host, port, num_conns):
-    server_addres = (host, port)
-    for i in range(0, num_conns):
-        connectionNum = i+1
-        print("Starting the connection", connectionNum, "to", server_addres)
-        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        sock.setblocking(False)
-        sock.connect_ex(server_addres)
-        event = selectors.EVENT_READ | selectors.EVENT_WRITE
-        dataEntre = types.SimpleNamespace(connectionNum = connectionNum,
-            msgTotal=sum(len(m) for m in messageClient),
-            recvTotal=0,
-            messageClient=list(messageClient),
-            outB=b"",
-        )
-        selVar.register(sock, event, data=dataEntre)
-
-#this should be triggered when it is a read or wirte event, making sure it actually does them
-def ServiceConnectClient(key, mask):
-    sock = key.fileobj
-    dataEntre = key.data
+def serviceClient(key, mask):
+    workSocket = key.fileobj
+    data = key.data
     if mask & selectors.EVENT_READ:
-        recvData = sock.recv(1024) # makes it able to read
+        recvData = workSocket.recv(1024) #sets up to read
         if recvData:
-            print("Recieved", repr(recvData), "from the connection", dataEntre.connectionNum)
-            dataEntre.recvTotal += len(recvData)
-            if not recvData or dataEntre.recvTotal == dataEntre.msgTotal:
-                print("Closing the Connection", dataEntre.connectionNum)
-                selVar.unregistered(sock)
-                sock.close()
-    if mask & selectors.EVENT_WRITE:
-        if not dataEntre.outb and dataEntre.messages:
-            dataEntre.outb = dataEntre.messages.pop(0)
-        if dataEntre.outb:
-            print("Sending", repr(dataEntre.outb), "to Connection", dataEntre.connectionNum)
-            sent = sock.send(dataEntre.outb)  # Should be ready to write
-            dataEntre.outb = dataEntre.outb[sent:]
+            data.outb += recvData
+        else:
+            print("Ending connection to: ", data.addr)
+            sel.unregister(workSocket)
+            workSocket.close()
+    else:
+        if data.outb:
+            print("Echoing to client: ", repr(data.outb), "client is: ", data.addr)
+            sent = workSocket.send(data.outb) #sets up to write
+            data.outb = data.outb[sent:]
 
-# the main part of the program we will be using
 
-host = '127.0.0.1' # this is 0.0.0.0 to be able to communicate across machines
-port = 49000
-numConns = 10
+# main server program
+host = '127.0.0.1'
+port = 49000 # 60000 + 1 for pizzaz -mallory
 
-startConnectionClient(host, port, numConns)
+#listening socket to register with SELECT
 
+lSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+lSocket.bind((host,port))
+lSocket.listen()
+
+print("Server running on: ",host,", Listening on: ",port)
+lSocket.setblocking(False)
+sel.register(lSocket, selectors.EVENT_READ, data=None)
+
+
+# while waiting for comms from client
 try:
     while True:
-        eventTest = selVar.select(timeout=1)
-        if eventTest:
-            for key, mask, in eventTest:
-                ServiceConnectClient(key, mask)
-        if not selVar.get_map():
-            break
+        events = sel.select(timeout=None)
+        for key, mask in events:
+            if key.data is None:
+                acceptWrapper(key.fileobj)
+            else:
+                serviceClient(key, mask)
 except KeyboardInterrupt:
-    print("Caught keyboard interruption, exiting, User terminated program")
+    print("Service interupted by admin, exiting...")
 finally:
-    selVar.close()
+    sel.close()
