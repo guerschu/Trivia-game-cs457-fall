@@ -80,7 +80,8 @@ host, port = sys.argv[1], int(sys.argv[2])
 action, value = sys.argv[3], sys.argv[4]
 request = create_request(action, value)
 
-startConnectionClient(host, port, request)
+startConnectionClient(host, port, 10)
+# startConnectionClient(host, port, request)
 
 try:
     while True:
