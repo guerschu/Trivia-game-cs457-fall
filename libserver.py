@@ -91,20 +91,10 @@ class Message:
 
     def _create_response_json_content(self):
         action = self.request.get("action")
-        if action == "search":
+        if action == "animal":
             query = self.request.get("value")
-            answer = request_search.get(query) or f'No match for "{query}".'
+            answer = request_triva.get(query) or f'No match for "{query}".'
             content = {"result": answer}
-        elif action == "double":
-            req = self.request.get("value")
-            res = struct.unpack(">i",req) * 2
-            content ={"result",struct.pack(">i",res)}
-            content_encoding = "binary"
-        elif action == "negate":
-            req = self.request.get("value")
-            res = struct.unpack(">i",req) * -1
-            content ={"result",struct.pack(">i",res)}
-            content_encoding = "binary"
         else:
             content = {"result": f'Error: invalid action "{action}".'}
         content_encoding = "utf-8"
