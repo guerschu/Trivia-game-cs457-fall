@@ -78,7 +78,7 @@ if len(sys.argv) != 5:
 
 host, port = sys.argv[1], int(sys.argv[2])
 action, value = sys.argv[3], sys.argv[4]
-request = create_request(action, value)
+#request = create_request(action, value)
 
 startConnectionClient(host, port, 10)
 # startConnectionClient(host, port, request)
