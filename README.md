@@ -5,7 +5,8 @@ We wanted to make a fun terminal co-op game where you and friends can test your 
 **How to play:**
 1. **Start the server:** Run the `server.py` script.
 2. **Connect clients:** Run the `client.py` script on two different machines or terminals.
-3. **Play the game:** Trying to get the most points by getting the most correct answers.  
+3. **Pick Trivia:** We only have 'animal' trivia as an option, more soon to come to pick to be able to have a variety of fun trivia options
+4. **Play the game:** Trying to get the most points by getting the most correct answers.  
 
 **Technologies used:**
 * Python 
