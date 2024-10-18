@@ -7,20 +7,37 @@ import types
 selVar = selectors.DefaultSelector()
 messageClient = [b"Got it to work, testing connection", b" Message 2 Ready To Play Game?"]
 
-def startConnectionClient(host, port, requests):
+def startConnectionClient(host, port, num_conns):
     server_addres = (host, port)
-    print("Starting the connection to", server_addres)
-    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    sock.setblocking(False)
-    sock.connect_ex(server_addres)
-    event = selectors.EVENT_READ | selectors.EVENT_WRITE
-    dataEntre = types.SimpleNamespace(connectionNum = connectionNum,
-        msgTotal=sum(len(m) for m in messageClient),
-        recvTotal=0,
-        messageClient=list(messageClient),
-        outB=b"",
-    )
-    selVar.register(sock, event, data=dataEntre)
+    for i in range(0, num_conns):
+        connectionNum = i+1
+        print("Starting the connection", connectionNum, "to", server_addres)
+        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        sock.setblocking(False)
+        sock.connect_ex(server_addres)
+        event = selectors.EVENT_READ | selectors.EVENT_WRITE
+        dataEntre = types.SimpleNamespace(connectionNum = connectionNum,
+            msgTotal=sum(len(m) for m in messageClient),
+            recvTotal=0,
+            messageClient=list(messageClient),
+            outB=b"",
+        )
+        selVar.register(sock, event, data=dataEntre)
+
+# def startConnectionClient(host, port, requests):
+#     server_addres = (host, port)
+#     print("Starting the connection to", server_addres)
+#     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+#     sock.setblocking(False)
+#     sock.connect_ex(server_addres)
+#     event = selectors.EVENT_READ | selectors.EVENT_WRITE
+#     dataEntre = types.SimpleNamespace(connectionNum = connectionNum,
+#         msgTotal=sum(len(m) for m in messageClient),
+#         recvTotal=0,
+#         messageClient=list(messageClient),
+#         outB=b"",
+#     )
+#     selVar.register(sock, event, data=dataEntre)
         
 #this should be triggered when it is a read or wirte event, making sure it actually does them
 def ServiceConnectClient(key, mask):
