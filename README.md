@@ -4,7 +4,7 @@ We wanted to make a fun terminal co-op game where you and friends can test your 
 
 **How to play:**
 1. **Start the server:** Run the `server.py` script.
-2. **Connect clients:** Run the `client.py` script on two different machines or terminals.
+2. **Connect clients:** Run the `client.py` client is going to take three inputs from terminal 'host IP address' 'port number' 'which trivia you would like to load' 'value'
 3. **Play the game:** Trying to get the most points by getting the most correct answers.  
 
 **Technologies used:**
