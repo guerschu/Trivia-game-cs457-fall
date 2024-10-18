@@ -1,7 +1,10 @@
+#!/usr/bin/env python3
 import selectors
 import socket
 import types
 import sys
+import libserver
+
 sel = selectors.DefaultSelector()
 
 # accept wrapper routine, when lSocket gets request to connect
@@ -18,22 +21,12 @@ def acceptWrapper(newSocket):
 # subroutine to service client for read or write
 
 def serviceClient(key, mask):
-    workSocket = key.fileobj
-    data = key.data
-    if mask & selectors.EVENT_READ:
-        recvData = workSocket.recv(1024) #sets up to read
-        if recvData:
-            data.outb += recvData
-        else:
-            print("Ending connection to: ", data.addr)
-            sel.unregister(workSocket)
-            workSocket.close()
-    else:
-        if data.outb:
-            print("Echoing to client: ", repr(data.outb), "client is: ", data.addr)
-            sent = workSocket.send(data.outb) #sets up to write
-            data.outb = data.outb[sent:]
-
+    msg = key.data
+    try:
+        msg.process_events(mask)
+    except Exception:
+        print("main: srvc client err for: ",Exception)
+        msg.close()
 
 if len(sys.argv) != 3:
     print("usage:", sys.argv[0], "<host> <port>")
