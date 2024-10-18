@@ -1,6 +1,7 @@
 import selectors
 import socket
 import types
+import sys
 sel = selectors.DefaultSelector()
 
 # accept wrapper routine, when lSocket gets request to connect
@@ -34,11 +35,14 @@ def serviceClient(key, mask):
             data.outb = data.outb[sent:]
 
 
-# main server program
-host = '127.0.0.1'
-port = 49000 # 60000 + 1 for pizzaz -mallory
+if len(sys.argv) != 3:
+    print("usage:", sys.argv[0], "<host> <port>")
+    sys.exit(1)
 
-#listening socket to register with SELECT
+host, port = sys.argv[1], int(sys.argv[2])
+lsock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+# Avoid bind() exception: OSError: [Errno 48] Address already in use
+lsock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
 lSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 lSocket.bind((host,port))
