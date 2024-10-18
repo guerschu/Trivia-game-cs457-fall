@@ -8,7 +8,7 @@ sel = selectors.DefaultSelector()
 def acceptWrapper(newSocket):
     conn, addr = newSocket.accept()
     print("Connection from client at: ", addr)
-    conn.setBlocking(False)
+    conn.setblocking(False)
     data = types.SimpleNamespace(addr=addr, inb=b"", outb=b"")
     events = selectors.EVENT_READ | selectors.EVENT_WRITE
     sel.register(conn, events, data=data)

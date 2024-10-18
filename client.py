@@ -22,8 +22,8 @@ def startConnectionClient(host, port, num_conns):
             messageClient=list(messageClient),
             outB=b"",
         )
-        selVar.register(sock, event, dataEntre=dataEntre)
-
+        selVar.register(sock, event, data=dataEntre)
+        
 #this should be triggered when it is a read or wirte event, making sure it actually does them
 def ServiceConnectClient(key, mask):
     sock = key.fileobj
@@ -35,20 +35,21 @@ def ServiceConnectClient(key, mask):
             dataEntre.recvTotal += len(recvData)
             if not recvData or dataEntre.recvTotal == dataEntre.msgTotal:
                 print("Closing the Connection", dataEntre.connectionNum)
-                selVar.unregistered(sock)
+                selVar.unregister(sock)
                 sock.close()
     if mask & selectors.EVENT_WRITE:
-        if not dataEntre.outb and dataEntre.messages:
-            dataEntre.outb = dataEntre.messages.pop(0)
-        if dataEntre.outb:
-            print("Sending", repr(dataEntre.outb), "to Connection", dataEntre.connectionNum)
-            sent = sock.send(dataEntre.outb)  # Should be ready to write
-            dataEntre.outb = dataEntre.outb[sent:]
+        if not dataEntre.outB and dataEntre.messageClient:
+            dataEntre.outB = dataEntre.messageClient.pop(0)
+        if dataEntre.outB:
+            print("Sending", repr(dataEntre.outB), "to Connection", dataEntre.connectionNum)
+            sent = sock.send(dataEntre.outB)  # Should be ready to write
+            dataEntre.outB = dataEntre.outB[sent:]
 
 # the main part of the program we will be using
 
-host = '0.0.0.0' # this is 0.0.0.0 to be able to communicate across machines
-port = 6001
+host = '127.0.0.1' # this is 0.0.0.0 to be able to communicate across machines
+port = 49000
+
 numConns = 10
 
 startConnectionClient(host, port, numConns)
