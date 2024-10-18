@@ -86,15 +86,15 @@ def read(self):
     self._read()
 
     if self._jsonheader_len is None:
-            self.processProtoheader()
+        self.processProtoheader()
 
-        if self._jsonheader_len is not None:
-            if self.jsonheader is None:
-                self.process_jsonheader()
+    if self._jsonheader_len is not None:
+        if self.jsonHeader is None:
+            self.process_jsonheader()
 
-        if self.jsonheader:
-            if self.response is None:
-                self.process_response()
+    if self.jsonHeader:
+        if self.response is None:
+            self.process_response()
 
 def write(self):
         if not self._request_queued:
@@ -151,7 +151,7 @@ def queue_request(self):
 def processProtoheader(self):
     hdrlen = self._jsonheader_len
     if len(self._recv_buffer) >= hdrlen:
-        self.jsonheader = self._jsonDecode(self._recv_buffer[:hdrlen], "utf-8")
+        self.jsonHeader = self._jsonDecode(self._recv_buffer[:hdrlen], "utf-8")
         self._recv_buffer = self._recv_buffer[hdrlen:]
         for reqhdr in ("byteorder","content-length","content-type","content-encoding"):
             if reqhdr not in self.jsonHeader:
