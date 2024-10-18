@@ -23,7 +23,7 @@ def startConnectionClient(host, port, num_conns):
             outB=b"",
         )
         selVar.register(sock, event, data=dataEntre)
-
+        
 #this should be triggered when it is a read or wirte event, making sure it actually does them
 def ServiceConnectClient(key, mask):
     sock = key.fileobj
@@ -49,6 +49,7 @@ def ServiceConnectClient(key, mask):
 
 host = '127.0.0.1' # this is 0.0.0.0 to be able to communicate across machines
 port = 49000
+
 numConns = 10
 
 startConnectionClient(host, port, numConns)

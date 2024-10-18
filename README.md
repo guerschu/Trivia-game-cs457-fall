@@ -16,7 +16,10 @@ We wanted to make a fun terminal co-op game where you and friends can test your 
 
 **Libraries**
 * *Here is where we will put what Libraries we are using as we find them*
-* 
+*  sys
+* socket
+* selectors
+* types
 
 **Additional resources:**
 * coming soon!
