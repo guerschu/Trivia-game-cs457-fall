@@ -3,41 +3,20 @@ import socket
 import selectors
 import types
 
+import libclient
 
 selVar = selectors.DefaultSelector()
-messageClient = [b"Got it to work, testing connection", b" Message 2 Ready To Play Game?"]
+# messageClient = [b"Got it to work, testing connection", b" Message 2 Ready To Play Game?"]
 
-def startConnectionClient(host, port, num_conns):
+def startConnectionClient(host, port, requests):
     server_addres = (host, port)
-    for i in range(0, num_conns):
-        connectionNum = i+1
-        print("Starting the connection", connectionNum, "to", server_addres)
-        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        sock.setblocking(False)
-        sock.connect_ex(server_addres)
-        event = selectors.EVENT_READ | selectors.EVENT_WRITE
-        dataEntre = types.SimpleNamespace(connectionNum = connectionNum,
-            msgTotal=sum(len(m) for m in messageClient),
-            recvTotal=0,
-            messageClient=list(messageClient),
-            outB=b"",
-        )
-        selVar.register(sock, event, data=dataEntre)
-
-# def startConnectionClient(host, port, requests):
-#     server_addres = (host, port)
-#     print("Starting the connection to", server_addres)
-#     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-#     sock.setblocking(False)
-#     sock.connect_ex(server_addres)
-#     event = selectors.EVENT_READ | selectors.EVENT_WRITE
-#     dataEntre = types.SimpleNamespace(connectionNum = connectionNum,
-#         msgTotal=sum(len(m) for m in messageClient),
-#         recvTotal=0,
-#         messageClient=list(messageClient),
-#         outB=b"",
-#     )
-#     selVar.register(sock, event, data=dataEntre)
+    print("Starting the connection to", server_addres)
+    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    sock.setblocking(False)
+    sock.connect_ex(server_addres)
+    event = selectors.EVENT_READ | selectors.EVENT_WRITE
+    messageClient = libclient.Message(sel, sock, addr, request)
+    selVar.register(sock, event, data=messageClient)
         
 #this should be triggered when it is a read or wirte event, making sure it actually does them
 def ServiceConnectClient(key, mask):
@@ -78,27 +57,26 @@ if len(sys.argv) != 5:
 
 host, port = sys.argv[1], int(sys.argv[2])
 action, value = sys.argv[3], sys.argv[4]
-#request = create_request(action, value)
+request = create_request(action, value)
 
-startConnectionClient(host, port, 10)
-# startConnectionClient(host, port, request)
+startConnectionClient(host, port, request)
 
 try:
     while True:
         eventTest = selVar.select(timeout=1)
-        # for key, mask in eventTest:
-        #     messageClient = key.data
-        #     try:
-        #         messageClient.process_events(mask)
-        #     except Exception:
-        #         print(
-        #             "main: error: exception for",
-        #             f"{messageClient.addr}:\n{traceback.format_exc()}",
-        #         )
-        #         messageClient.close()
-        if eventTest:
-            for key, mask, in eventTest:
-                ServiceConnectClient(key, mask)
+        for key, mask in eventTest:
+            messageClient = key.data
+            try:
+                messageClient.process_events(mask)
+            except Exception:
+                print(
+                    "main: error: exception for",
+                    f"{messageClient.addr}:\n{traceback.format_exc()}",
+                )
+                messageClient.close()
+        # if eventTest:
+        #     for key, mask, in eventTest:
+        #         ServiceConnectClient(key, mask)
         if not selVar.get_map():
             break
 except KeyboardInterrupt:
