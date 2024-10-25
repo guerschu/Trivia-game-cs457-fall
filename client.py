@@ -22,7 +22,7 @@ def startConnectionClient(host, port, requests):
 
 
 def createRequest(action, value):
-    if action == "search":
+    if action == "animal":
         return dict(
             type="text/json",
             encoding="uft-8",
