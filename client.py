@@ -15,7 +15,7 @@ def startConnectionClient(host, port, requests):
     sock.setblocking(False)
     sock.connect_ex(server_addres)
     event = selectors.EVENT_READ | selectors.EVENT_WRITE
-    messageClient = libclient.Message(sel, sock, addr, request)
+    messageClient = libclient.Messages(sel, sock, addr, request)
     selVar.register(sock, event, data=messageClient)
         
 #this should be triggered when it is a read or wirte event, making sure it actually does them
@@ -57,7 +57,7 @@ if len(sys.argv) != 5:
 
 host, port = sys.argv[1], int(sys.argv[2])
 action, value = sys.argv[3], sys.argv[4]
-request = create_request(action, value)
+request = createRequest(action, value)
 
 startConnectionClient(host, port, request)
 
