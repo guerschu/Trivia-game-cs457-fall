@@ -9,8 +9,8 @@ sel = selectors.DefaultSelector()
 
 # accept wrapper routine, when lSocket gets request to connect
 
-def acceptWrapper(newSocket):
-    conn, addr = newSocket.accept()
+def acceptWrapper(sock):
+    conn, addr = sock.accept()
     print("Connection from client at: ", addr)
     conn.setblocking(False)
     data = types.SimpleNamespace(addr=addr, inb=b"", outb=b"")
@@ -20,14 +20,25 @@ def acceptWrapper(newSocket):
 
 # subroutine to service client for read or write
 
-def serviceClient(key, mask):
-    msg = key.data
-    try:
-        msg.process_events(mask)
-    except Exception:
-        print("main: srvc client err for: ",Exception)
-        msg.close()
+def service_connection(key, mask):
+    sock = key.fileobj
+    data = key.data
+    if mask & selectors.EVENT_READ:
+        recv_data = sock.recv(1024)  # Should be ready to read
+        if recv_data:
+            data.outb += recv_data
+        else:
+            print(f"Closing connection to {data.addr}")
+            sel.unregister(sock)
+            sock.close()
+    if mask & selectors.EVENT_WRITE:
+        if data.outb:
+            print(f"Echoing {data.outb!r} to {data.addr}")
+            sent = sock.send(data.outb)  # Should be ready to write
+            data.outb = data.outb[sent:]
 
+
+#program starts here
 if len(sys.argv) != 3:
     print("usage:", sys.argv[0], "<host> <port>")
     sys.exit(1)
@@ -35,7 +46,7 @@ if len(sys.argv) != 3:
 host, port = sys.argv[1], int(sys.argv[2])
 lsock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 # Avoid bind() exception: OSError: [Errno 48] Address already in use
-lsock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+# lsock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
 lSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 lSocket.bind((host,port))
@@ -54,7 +65,7 @@ try:
             if key.data is None:
                 acceptWrapper(key.fileobj)
             else:
-                serviceClient(key, mask)
+                service_connection(key, mask)
 except KeyboardInterrupt:
     print("Service interupted by admin, exiting...")
 finally:
