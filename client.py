@@ -1,7 +1,7 @@
 import sys
 import socket
 import selectors
-import types
+import traceback
 
 import libclient
 
@@ -15,32 +15,14 @@ def startConnectionClient(host, port, requests):
     sock.setblocking(False)
     sock.connect_ex(server_addres)
     event = selectors.EVENT_READ | selectors.EVENT_WRITE
-    messageClient = libclient.Messages(sel, sock, addr, request)
+    messageClient = libclient.Messages(selVar, sock, server_addres, requests)
     selVar.register(sock, event, data=messageClient)
         
 #this should be triggered when it is a read or wirte event, making sure it actually does them
-def ServiceConnectClient(key, mask):
-    sock = key.fileobj
-    dataEntre = key.data
-    if mask & selectors.EVENT_READ:
-        recvData = sock.recv(1024) # makes it able to read
-        if recvData:
-            print("Recieved", repr(recvData), "from the connection", dataEntre.connectionNum)
-            dataEntre.recvTotal += len(recvData)
-            if not recvData or dataEntre.recvTotal == dataEntre.msgTotal:
-                print("Closing the Connection", dataEntre.connectionNum)
-                selVar.unregister(sock)
-                sock.close()
-    if mask & selectors.EVENT_WRITE:
-        if not dataEntre.outB and dataEntre.messageClient:
-            dataEntre.outB = dataEntre.messageClient.pop(0)
-        if dataEntre.outB:
-            print("Sending", repr(dataEntre.outB), "to Connection", dataEntre.connectionNum)
-            sent = sock.send(dataEntre.outB)  # Should be ready to write
-            dataEntre.outB = dataEntre.outB[sent:]
+
 
 def createRequest(action, value):
-    if action == "animal":
+    if action == "search":
         return dict(
             type="text/json",
             encoding="uft-8",
@@ -70,8 +52,8 @@ try:
                 messageClient.process_events(mask)
             except Exception:
                 print(
-                    "main: error: exception for",
-                    f"{messageClient.addr}:\n{traceback.format_exc()}",
+                    f"Main: Error: Exception for {messageClient.addr}:\n"
+                    f"{traceback.format_exc()}"
                 )
                 messageClient.close()
         # if eventTest:
