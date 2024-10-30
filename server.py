@@ -11,7 +11,7 @@ sel = selectors.DefaultSelector()
 
 def acceptWrapper(sock):
     conn, addr = sock.accept()
-    print("Connection from client at: ", addr)
+    print("Connection from client at: ", addr, " with chosen name: ")
     conn.setblocking(False)
     message = libserver.Message(sel, conn, addr)
     sel.register(conn, selectors.EVENT_READ, data=message)
