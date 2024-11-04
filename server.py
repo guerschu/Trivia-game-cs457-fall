@@ -4,17 +4,18 @@ import socket
 import types
 import sys
 import libserver
-
+import custom_logger as log
 sel = selectors.DefaultSelector()
 
 # accept wrapper routine, when lSocket gets request to connect
 
 def acceptWrapper(sock):
     conn, addr = sock.accept()
-    print("Connection from client at: ", addr, " with chosen name: ")
+    logConn = f"Connection from client at:  {addr} with chosen name: "
     conn.setblocking(False)
     message = libserver.Message(sel, conn, addr)
     sel.register(conn, selectors.EVENT_READ, data=message)
+    log.logIt(logConn)
 
 
 # subroutine to service client for read or write

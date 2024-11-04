@@ -94,12 +94,9 @@ class Message:
     def _create_response_json_content(self):
         category = self.request.get("category")
         print(f"YO!{category}")
-        if category == 'animal':
-            answer = request_triva.get(category) or f'No match for "{category}".'
-            print(answer)
-            content = {"result": answer}
-        else:
-            content = {"result": f'Error: invalid action "{category}".'}
+        answer = request_triva.get(category) or f'No match for "{category}".'
+        print(answer)
+        content = {"result": answer}
         content_encoding = "utf-8"
         response = {
             "content_bytes": self._json_encode(content, content_encoding),
