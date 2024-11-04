@@ -5,7 +5,9 @@ import io
 import struct
 
 request_triva = {
-    "animal": "You've selected animal Trivia"
+    "animal": "You've selected animal Trivia",
+    "history": "You've selected history Trivia",
+    "locations": "you've selected locations Trivia"
 }
 
 animal_trivia = {
@@ -90,13 +92,11 @@ class Message:
         return message
 
     def _create_response_json_content(self):
-        action = self.request.get("action")
-        if action == "animal":
-            query = self.request.get("value")
-            answer = request_triva.get(query) or f'No match for "{query}".'
-            content = {"result": answer}
-        else:
-            content = {"result": f'Error: invalid action "{action}".'}
+        category = self.request.get("category")
+        print(f"YO!{category}")
+        answer = request_triva.get(category) or f'No match for "{category}".'
+        print(answer)
+        content = {"result": answer}
         content_encoding = "utf-8"
         response = {
             "content_bytes": self._json_encode(content, content_encoding),
