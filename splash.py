@@ -12,6 +12,12 @@ def options():
     print('''|         Type: Locations        |''')
     print('''|________________________________|''')
 
+def youChose(opt):
+    print('''|________________________________|''')
+    print(f'''|Great you chose: {opt}        |''')
+    print('''|________________________________|''')
+
+
 def correct():
     print('''__________________________________''')
     print('''|             Correct!           |''')

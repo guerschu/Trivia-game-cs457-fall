@@ -8,13 +8,16 @@ import libclient
 
 selVar = selectors.DefaultSelector()
 # messageClient = [b"Got it to work, testing connection", b" Message 2 Ready To Play Game?"]
+validOptions = ["animal","exit","history","locations","location"]
 
-def waitUser():
+def waitUserRequest():
     splash.options()
     while True:
         user_input = input("Enter your input (type 'exit' to quit): ")
-        if user_input == "exit":
-            return user_input
+        if user_input in validOptions:
+            return user_input.lower()
+        else:
+            print(print('''|  Choose a valid option and try again   |'''))
         
         
 def startConnectionClient(host, port, requests, name):
@@ -42,12 +45,15 @@ def createRequest(action, value):
 
 # the main part of the program we will be using
 
-if len(sys.argv) != 6:
-    print("usage:", sys.argv[0], "<host> <port> <action> <value> <name>")
+if len(sys.argv) != 2:
+    print("usage:", sys.argv[0], "<host> <port>")
     sys.exit(1)
 
+#<action> <value> <name>
+
 host, port = sys.argv[1], int(sys.argv[2])
-action, value = sys.argv[3], sys.argv[4]
+action = waitUserRequest()
+value = , sys.argv[4]
 clientName = sys.argv[5] # added to identify the different  clients
 request = createRequest(action, value)
 
@@ -58,6 +64,7 @@ try:
         eventTest = selVar.select(timeout=1)
         for key, mask in eventTest:
             messageClient = key.data
+            waitUser()
             try:
                 print("Sent message to clinetlib")
                 messageClient.process_events(mask)
