@@ -3,12 +3,20 @@ import socket
 import selectors
 import traceback
 import time
-
+import splash
 import libclient
 
 selVar = selectors.DefaultSelector()
 # messageClient = [b"Got it to work, testing connection", b" Message 2 Ready To Play Game?"]
 
+def waitUser():
+    splash.options()
+    while True:
+        user_input = input("Enter your input (type 'exit' to quit): ")
+        if user_input == "exit":
+            return user_input
+        
+        
 def startConnectionClient(host, port, requests, name):
     server_addres = (host, port)
     print("Starting the connection to", server_addres)
