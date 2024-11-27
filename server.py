@@ -17,25 +17,36 @@ def acceptWrapper(sock):
     sel.register(conn, selectors.EVENT_READ, data=message)
     log.logIt(logConn)
 
-
+def serviceConnection(message, mask):
+    try:
+        message.process_events(mask)
+    except Exception as e:
+        print(f"Error processing events for {message.addr}: {e}")
+        message.close()
 # subroutine to service client for read or write
 
 #program starts here
-if len(sys.argv) != 3:
-    print("usage:", sys.argv[0], "<host> <port>")
+if len(sys.argv) != 3 or sys.argv[1] != "-p":
+    print("usage:", sys.argv[0], "-p <PORT>")
     sys.exit(1)
 
-host, port = sys.argv[1], int(sys.argv[2])
-lsock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-# Avoid bind() exception: OSError: [Errno 48] Address already in use
-lsock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-# lSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-lsock.bind((host,port))
-lsock.listen()
+port = int(sys.argv[2])
 
-print("Server running on: ",host,", Listening on: ",port)
+lsock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+lsock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+lsock.bind(('0.0.0.0', port))  # Listen on all interfaces
+lsock.listen(100)  # Maximum number of clients to queue
+lsock.setblocking(False)  # Make it non-blocking
+sel.register(lsock, selectors.EVENT_READ, data=None)
+
+print("Server running on: 0.0.0.0, Listening on:", port)
 lsock.setblocking(False)
 sel.register(lsock, selectors.EVENT_READ, data=None)
+
+if not any(key.fileobj == lsock for key in sel.get_map().values()):
+    sel.register(lsock, selectors.EVENT_READ, data=None)
+else:
+    print(f"Warning: Listening socket is already registered!")
 
 
 # while waiting for comms from client
@@ -47,12 +58,11 @@ try:
                 acceptWrapper(key.fileobj)
             else:
                 message = key.data
+                serviceConnection(message, mask)
                 try:
                     message.process_events(mask)
                 except Exception:
-                    print(
-                        f"Main: Error: Exception for {message.addr}:\n"
-                    )
+                    print(f"Main: Error: Exception for {message.addr}:\n")
                     message.close()
 
 except KeyboardInterrupt:
