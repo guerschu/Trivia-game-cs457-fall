@@ -45,17 +45,19 @@ def createRequest(category):
 
 # the main part of the program we will be using
 
-if len(sys.argv) != 3:
-    print("usage:", sys.argv[0], "<host> <port>")
+if len(sys.argv) != 5 or sys.argv[1] != "-i" or sys.argv[3] != "-p":
+    print("usage:", sys.argv[0], "-i <SERVER_IP/DNS> -p <PORT>")
     sys.exit(1)
+
+
 splash.home()
 time.sleep(3)
 #<action> <value> <name>
 
-host, port = sys.argv[1], int(sys.argv[2])
+host, port = sys.argv[2], int(sys.argv[4])
 category = waitUserRequest()
 splash.userName()
-clientName = input("Enter your input (type 'exit' to quit): ") # added to identify the different  clients
+clientName = input("Enter your input (type 'exit' to quit): ")
 request = createRequest(category)
 print(f"Attempting to connect {clientName} to {host} on port: {port}...")
 startConnectionClient(host, port, request, clientName)

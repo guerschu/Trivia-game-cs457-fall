@@ -62,9 +62,13 @@ class Message:
                 pass
             else:
                 self._send_buffer = self._send_buffer[sent:]
-                # Close when the buffer is drained. The response has been sent.
-                if sent and not self._send_buffer:
-                    self.close()
+                # If buffer is drained, either continue or close connection
+                if not self._send_buffer:
+                    if not self.response_created:
+                        self.create_response()  # Continue processing if more responses are needed
+                    else:
+                        print(f"Closing connection to {self.addr}")
+                        self.close()
 
     def _json_encode(self, obj, encoding):
         return json.dumps(obj, ensure_ascii=False).encode(encoding)
@@ -93,9 +97,9 @@ class Message:
 
     def _create_response_json_content(self):
         category = self.request.get("category")
-        print(f"YO!{category}")
+        print(f"Catergory Recieved: {category}")
         answer = request_triva.get(category) or f'No match for "{category}".'
-        print(answer)
+        print(f"Answer: {answer}")
         content = {"result": answer}
         content_encoding = "utf-8"
         response = {
@@ -135,9 +139,8 @@ class Message:
                 self.process_request()
 
     def write(self):
-        if self.request:
-            if not self.response_created:
-                self.create_response()
+        if self.request and not self.response_created:
+            self.create_response()
 
         self._write()
 
