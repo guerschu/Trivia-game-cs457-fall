@@ -37,14 +37,13 @@ lsock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 lsock.bind(('0.0.0.0', port))  # Listen on all interfaces
 lsock.listen(100)  # Maximum number of clients to queue
 lsock.setblocking(False)  # Make it non-blocking
-sel.register(lsock, selectors.EVENT_READ, data=None)
 
-print("Server running on: 0.0.0.0, Listening on:", port)
+
 lsock.setblocking(False)
-sel.register(lsock, selectors.EVENT_READ, data=None)
 
 if not any(key.fileobj == lsock for key in sel.get_map().values()):
     sel.register(lsock, selectors.EVENT_READ, data=None)
+    print("Server running on: 0.0.0.0, Listening on:", port)
 else:
     print(f"Warning: Listening socket is already registered!")
 
