@@ -7,6 +7,8 @@ import libserver
 import custom_logger as log
 sel = selectors.DefaultSelector()
 
+players = [] #usage: {IP,USERNAME}
+
 # accept wrapper routine, when lSocket gets request to connect
 
 def acceptWrapper(sock):
