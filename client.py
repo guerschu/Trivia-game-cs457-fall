@@ -4,7 +4,7 @@ import time
 import splash
 import libclient
 
-validOptions = ["animal","exit","history","locations","location"]
+validOptions = ["animal","exit","history","locations"]
 
 def waitUserRequest():
     splash.options()
