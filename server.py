@@ -1,31 +1,8 @@
-
-import selectors
 import socket
-import types
 import sys
-import libserver
 import custom_logger as log
-sel = selectors.DefaultSelector()
+import threading
 
-players = [] #usage: {IP,USERNAME}
-
-# accept wrapper routine, when lSocket gets request to connect
-
-def acceptWrapper(sock):
-    conn, addr = sock.accept()
-    logConn = f"Connection from client at:  {addr} with chosen name: "
-    conn.setblocking(False)
-    message = libserver.Message(sel, conn, addr)
-    sel.register(conn, selectors.EVENT_READ, data=message)
-    log.logIt(logConn)
-
-def serviceConnection(message, mask):
-    try:
-        message.process_events(mask)
-    except Exception as e:
-        print(f"Error processing events for {message.addr}: {e}")
-        message.close()
-# subroutine to service client for read or write
 
 #program starts here
 if len(sys.argv) != 3 or sys.argv[1] != "-p":
@@ -34,39 +11,55 @@ if len(sys.argv) != 3 or sys.argv[1] != "-p":
 
 port = int(sys.argv[2])
 
-lsock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-lsock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-lsock.bind(('0.0.0.0', port))  # Listen on all interfaces
-lsock.listen(100)  # Maximum number of clients to queue
-lsock.setblocking(False)  # Make it non-blocking
+server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+# server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
+def update_conns():
+    strcur = f"Current connections: {threading.activeCount() - 1}"
+    log.logIt(strcur)
+    print(strcur)
 
-lsock.setblocking(False)
+def send(conn, message):
+    message = message.encode('utf-8')
+    msg_len = len(message)
+    share_len = str(msg_len).encode('utf-8')
+    share_len += b' ' * (64-len(share_len))
+    conn.send(share_len)
+    conn.send(message)
 
-if not any(key.fileobj == lsock for key in sel.get_map().values()):
-    sel.register(lsock, selectors.EVENT_READ, data=None)
-    print("Server running on: 0.0.0.0, Listening on:", port)
-else:
-    print(f"Warning: Listening socket is already registered!")
+def serve_client(conn, addr):
+    log.logIt(f"Connection from client at: {addr} with chosen name: ")
 
-
-# while waiting for comms from client
-try:
     while True:
-        events = sel.select(timeout=None)
-        for key, mask in events:
-            if key.data is None:
-                acceptWrapper(key.fileobj)
-            else:
-                message = key.data
-                serviceConnection(message, mask)
-                try:
-                    message.process_events(mask)
-                except Exception:
-                    print(f"Main: Error: Exception for {message.addr}:\n")
-                    message.close()
+        msg_len = conn.recv(64).decode('utf-8')
+        if msg_len:
+            msg_len = int(msg_len)
+            message = conn.recv(msg_len).decode('utf-8')
+            if message == "DISCON":
+                update_conns()
+                break
+            log.logIt(f"Client at addr says: {message}")
+            send(conn, "Server: we hear you!")
+    conn.close()
 
-except KeyboardInterrupt:
-    print("Service interupted by admin, exiting...")
-finally:
-    sel.close()
+def run_server():
+    try:
+        server.listen()  # Maximum number of clients to queue
+        while True:
+            conn, addr = server.accept()
+            thread = threading.Thread(target=serve_client, args=(conn, addr))
+            thread.start()
+            strcur = f"Current connections: {threading.activeCount() - 1}"
+            log.logIt(strcur)
+            print(strcur)
+    except KeyboardInterrupt:
+        print("Service interupted by admin, exiting...")
+
+server.bind(('0.0.0.0', port))  # Listen on all interfaces
+print("Server running on: 0.0.0.0, Listening on:", port)
+players = {
+    "admin": {"IP":"0.0.0.0","GP":-1,"SEL":"giraffe"}
+} 
+#usage: {IP,POINTS,SUGGESTION}
+run_server()
+# server.setblocking(False)  # Make it non-blocking
