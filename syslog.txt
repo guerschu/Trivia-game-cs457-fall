@@ -4,3 +4,35 @@
 2024-11-03 22:56:05Connection from client at:  ('129.82.44.171', 49078) with chosen name: 
 2024-11-03 22:56:57Connection from client at:  ('129.82.44.171', 35428) with chosen name: 
 2024-11-04 09:56:37Connection from client at:  ('127.0.0.1', 33820) with chosen name: 
+2024-12-03 02:57:00Connection from client at:  ('127.0.0.1', 52796) with chosen name: 
+2024-12-03 02:57:00Current connections: 1
+2024-12-03 02:57:33Connection from client at:  ('127.0.0.1', 58322) with chosen name: 
+2024-12-03 02:57:33Current connections: 2
+2024-12-03 03:07:40Connection from client at:  ('127.0.0.1', 38722) with chosen name: 
+2024-12-03 03:07:40Current connections: 1
+2024-12-03 03:25:57Connection from client at: ('127.0.0.1', 50080) with chosen name: 
+2024-12-03 03:25:57Current connections: 1
+2024-12-03 03:26:27Connection from client at: ('127.0.0.1', 39366) with chosen name: 
+2024-12-03 03:26:27Current connections: 2
+2024-12-03 03:28:45Connection from client at: ('127.0.0.1', 58880) with chosen name: 
+2024-12-03 03:28:45Current connections: 1
+2024-12-03 03:28:45Client at addr says: j
+2024-12-03 03:29:26Connection from client at: ('127.0.0.1', 59848) with chosen name: 
+2024-12-03 03:29:26Current connections: 1
+2024-12-03 03:29:26Client at addr says: n
+2024-12-03 03:36:02Connection from client at: ('127.0.0.1', 35274) with chosen name: 
+2024-12-03 03:36:02Current connections: 1
+2024-12-03 03:36:02Client at addr says: j
+2024-12-03 03:37:37Connection from client at: ('127.0.0.1', 53998) with chosen name: 
+2024-12-03 03:37:37Current connections: 1
+2024-12-03 03:37:37Client at addr says: j
+2024-12-03 03:43:48Connection from client at: ('127.0.0.1', 57890) with chosen name: 
+2024-12-03 03:43:48Current connections: 1
+2024-12-03 03:43:48Client at addr says: j
+2024-12-03 03:53:22Connection from client at: ('127.0.0.1', 51754) with chosen name: 
+2024-12-03 03:53:22Current connections: 1
+2024-12-03 03:53:22Client at addr says: j
+2024-12-03 03:54:03Connection from client at: ('127.0.0.1', 60340) with chosen name: 
+2024-12-03 03:54:03Current connections: 1
+2024-12-03 03:54:03Client at addr says: l
+2024-12-03 03:54:26Current connections: 1
