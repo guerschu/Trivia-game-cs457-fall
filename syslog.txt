@@ -66,3 +66,14 @@
 2024-12-03 17:20:11Client at addr says: !jo
 2024-12-03 17:20:15Client at addr says: !animal
 2024-12-03 17:20:20Current connections: 1
+2024-12-03 16:32:01Connection from client at: ('129.82.44.150', 52704) with chosen name: 
+2024-12-03 16:32:01Client at addr says: jo
+2024-12-03 16:32:01Current connections: 1
+2024-12-03 16:32:42Connection from client at: ('129.82.44.151', 39074) with chosen name: 
+2024-12-03 16:32:42Current connections: 2
+2024-12-03 16:32:42Client at addr says: mal
+2024-12-03 16:36:22Current connections: 2
+2024-12-03 16:59:01Connection from client at: ('127.0.0.1', 43396) with chosen name: 
+2024-12-03 16:59:01Client at addr says: mal
+2024-12-03 16:59:01Current connections: 1
+
