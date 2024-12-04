@@ -161,6 +161,7 @@ def serve_client(conn, addr):
             break
     send(conn, splash.winCondition(players))
     send(conn, splash.thanksForPlaying())
+    send(conn, "DISCON")
     conn.close()
     
 
