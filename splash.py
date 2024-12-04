@@ -53,10 +53,12 @@ def wrong():
     '''
 
 def scoreBoard(players):
+    
     scoreboard_str = "______________________SCOREBOARD___________________\n"
     for player in players:
-        scoreboard_str += f"{player}: {player['GP']}\n"
-    scoreboard_str = "___________________________________________________\n"
+        if player != "admin":
+            scoreboard_str += f"{player}: {players[player]['GP']}\n"
+    scoreboard_str += "___________________________________________________\n"
     return scoreboard_str
 
 
