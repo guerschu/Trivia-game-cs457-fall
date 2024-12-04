@@ -22,6 +22,11 @@ We wanted to make a fun terminal co-op game where you and your friends can test 
     * Message Handling: Receives messages from clients, logs them, and sends responses.
     * Player Management: Updates the player's dictionary with player information and handles disconnections.
 
+**Limitation of The Game**
+* the lack of security is a main limitation of the game, if we were able to have more time to add the encryption would be a great way to get rid of this limitation
+* There is no team-based part of the game that someone might want from this like they added into Kahoot.
+* 
+
 **How to play:**
 1. **Start the server:** Run the `server.py` script. 'IP' 'Port number'
 2. **Connect clients:** Run the `client.py` client is going to take three inputs from the terminal 'host IP address' 'port number' 'trivia' 'what kind of trivia you would like to play' 'the player name for the game'
