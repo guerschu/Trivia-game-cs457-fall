@@ -106,6 +106,8 @@ def serve_client(conn, addr):
             else:
                 send(conn, splash.wrong())  
             send(conn, splash.scoreBoard(players))
+    send(conn, splash.winCondition(players))
+    send(conn, splash.thanksForPlaying())
     conn.close()
 
 def run_server():

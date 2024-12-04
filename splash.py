@@ -73,7 +73,12 @@ def winCondition(players):
     win_str +=  "___________________________________________________________\n"
     return win_str
 
-
+def thanksForPlaying():
+    return f'''
+    ____________________________________________________
+    |                 Thanks For Playing               |
+    |__________________________________________________|
+    '''
 
 def left(userName):
     return f'''
