@@ -35,7 +35,11 @@ splash.userName()
 clientName = input("Type your username (type 'exit' to quit): ")
 print(f"Attempting to connect {clientName} to {host} on port: {port}...")
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-client.connect((host, port))
+try:
+    client.connect((host, port))
+except socket.error as e:
+    print(f"Error connecting to server: {e}")
+    sys.exit(1)
 #client.setblocking(False)
 
 def send(message):
@@ -53,17 +57,20 @@ def start(usr_name):
     try:
         send(usr_name)
         while True:
-            msg_len = client.recv(64).decode('utf-8')
-            if msg_len:
-                msg_len = int(msg_len)
-                message = client.recv(msg_len).decode('utf-8')
-                if message == "DISCON":
-                    break
-                if message[0] == "!":
+            try:
+                msg_len = client.recv(64).decode('utf-8')
+                if msg_len:
+                    msg_len = int(msg_len)
+                    message = client.recv(msg_len).decode('utf-8')
+                    if message == "DISCON":
+                        break
+                    if message[0] == "!":
+                        print(f"Server: {message}")
+                        send("!"+input("Response: "))
                     print(f"Server: {message}")
-                    send("!"+input("Response: "))
-                print(f"Server: {message}")
-                #if meeting proper conditons about game ask for user input to send
+                    #if meeting proper conditons about game ask for user input to send
+            except Exception as e:
+                print(f"An error occurred: {e}")
     except KeyboardInterrupt:
         print("You interrupted your game! Disconnecting...")
         send("DISCON")
