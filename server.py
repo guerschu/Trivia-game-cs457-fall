@@ -10,7 +10,37 @@ players = {
         "GP":-1,
         "SEL":"giraffe"
         }
-} 
+}
+
+lobby = {
+    "animal": {
+        "admin": {
+        "IP":"0.0.0.0",
+        "GP":-1,
+        "SEL":"giraffe"
+        }
+    },
+    "history": {
+        "admin": {
+        "IP":"0.0.0.0",
+        "GP":-1,
+        "SEL":"giraffe"
+        }
+    },
+    "locations": {
+        "admin": {
+        "IP":"0.0.0.0",
+        "GP":-1,
+        "SEL":"giraffe"
+        }
+    }
+}
+
+status = {
+    "animal": False,
+    "history": False,
+    "locations": False
+}
 
 Answers = {
     "animal": {"1": "A", "2": "B", "3": "A", "4": "A", "5": "C", "6": "B"},
@@ -52,6 +82,21 @@ def update_conns():
     log.logIt(strcur)
     print(strcur)
 
+def start_lobby(lobby_name):
+    status[lobby_name] = True
+
+def lobby_status(lobby_name):
+    return status[lobby_name]
+
+def update_lobby(lobby_name):
+    if (not lobby_status(lobby_name)) and (len(lobby[lobby_name]) >= 3):
+        start_lobby(lobby_name)
+
+def remove_player(name):
+    if(players[name]["SEL"] != ""):
+        del lobby[players[name]["SEL"]][name]
+    del players[name]
+
 def send(conn, message):
     message = message.encode('utf-8')
     msg_len = len(message)
@@ -74,6 +119,7 @@ def serve_client(conn, addr):
             message = conn.recv(msg_len).decode('utf-8')
             if message == "DISCON":
                 update_conns()
+                remove_player(usrn)
                 break
             if message[0] == "!":
                 if setup == 0:
@@ -85,28 +131,35 @@ def serve_client(conn, addr):
                 elif setup == 1:
                     if validate(conn, message[1:]):
                         players[usrn].update({"SEL": (message[1:].lower())})
+                        lobby[players[usrn]["SEL"]][usrn] = players[usrn]
+                        update_lobby(players[usrn]["SEL"])
                         inlobby = True
             log.logIt(f"Client at addr says: {message}")
     #print(players)
     selection = players[usrn]["SEL"]
-    for i, func in Questions[selection].items():
-        print(i)
-        send(conn, "!"+func())
-        msg_len = conn.recv(64).decode('utf-8')
-        if msg_len:
-            msg_len = int(msg_len)
-            message = conn.recv(msg_len).decode('utf-8')
-            print(message)
-            if message == "DISCON":
-                update_conns()
-                break
-            if message[1:] == Answers[selection][i]:
-                players[usrn].update({"GP":(players[usrn]["GP"]+1)})
-                send(conn, splash.correct())
-            else:
-                send(conn, splash.wrong())  
-            send(conn, splash.scoreBoard(players))
+    while True:
+        if lobby_status(selection):
+            for i, func in Questions[selection].items():
+                print(i)
+                send(conn, "!"+func())
+                msg_len = conn.recv(64).decode('utf-8')
+                if msg_len:
+                    msg_len = int(msg_len)
+                    message = conn.recv(msg_len).decode('utf-8')
+                    print(message)
+                    if message == "DISCON":
+                        update_conns()
+                        remove_player(usrn)
+                        break
+                    if message[1:] == Answers[selection][i]:
+                        players[usrn].update({"GP":(players[usrn]["GP"]+1)})
+                        send(conn, splash.correct())
+                    else:
+                        send(conn, splash.wrong())  
+                    send(conn, splash.scoreBoard(players))
+            break
     conn.close()
+    
 
 def run_server():
     try:
