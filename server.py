@@ -39,10 +39,13 @@ validOptions = ["animal","exit","history","location"]
 def validate(conn, user_input):
     if user_input == "exit" or user_input == 'x':
         send(conn, "Disconnecting you Goodbye...")
+        return False
     if user_input.lower() in validOptions:
         send(conn, splash.youChose(user_input))
+        return True
     else:
         send(conn, "!|  Choose a valid option and try again   |")
+        return False
 
 def update_conns():
     strcur = f"Current connections: {threading.active_count() - 1}"
@@ -80,9 +83,9 @@ def serve_client(conn, addr):
                     setup += 1
                     send(conn, splash.youChose(message[1:]))
                 elif setup == 1:
-                    validate(conn, message[1:])
-                    players[usrn].update({"SEL": (message[1:].lower())})
-                    inlobby = True
+                    if validate(conn, message[1:]):
+                        players[usrn].update({"SEL": (message[1:].lower())})
+                        inlobby = True
             log.logIt(f"Client at addr says: {message}")
     #print(players)
     selection = players[usrn]["SEL"]
@@ -103,7 +106,6 @@ def serve_client(conn, addr):
             else:
                 send(conn, splash.wrong())  
             send(conn, splash.scoreBoard(players))
-
     conn.close()
 
 def run_server():
