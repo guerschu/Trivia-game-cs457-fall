@@ -52,6 +52,13 @@ def wrong():
     |________________________________|
     '''
 
+def waiting():
+    return '''
+    _____________________________________
+    | Waiting For Other Players To Join |
+    |___________________________________|
+    '''
+
 def scoreBoard(players):
     
     scoreboard_str = "______________________SCOREBOARD___________________\n"
