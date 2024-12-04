@@ -48,6 +48,7 @@ def send(message):
 
 def start(usr_name):
     print(f"Game started for {usr_name}")
+    splash.lobby(usr_name)
     #implement here what the server is sending back and all that
     try:
         send(usr_name)

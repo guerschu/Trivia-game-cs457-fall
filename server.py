@@ -2,7 +2,17 @@ import socket
 import sys
 import custom_logger as log
 import threading
+import splash
 
+players = {
+    "admin": {"IP":"0.0.0.0","GP":-1,"SEL":"giraffe"}
+} 
+
+Answers = {
+    "animal": {"1": "A", "2": "B", "3": "A", "4": "A", "5": "C", "6": "B"}
+    "history": {"1": "A", "2": "B", "3": "B", "4": "C", "5": "A", "6": "B"}
+    "locations": {"1": "A", "2": "B", "3": "A", "4": "A", "5": " B", "6": "C"}
+}
 
 #program starts here
 if len(sys.argv) != 3 or sys.argv[1] != "-p":
@@ -15,7 +25,7 @@ server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 # server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
 def update_conns():
-    strcur = f"Current connections: {threading.activeCount() - 1}"
+    strcur = f"Current connections: {threading.active_count() - 1}"
     log.logIt(strcur)
     print(strcur)
 
@@ -35,9 +45,12 @@ def serve_client(conn, addr):
         if msg_len:
             msg_len = int(msg_len)
             message = conn.recv(msg_len).decode('utf-8')
+            players[message] = {addr, 0, ""}
             if message == "DISCON":
                 update_conns()
                 break
+            if message[0] == "!":
+                
             log.logIt(f"Client at addr says: {message}")
             send(conn, "Server: we hear you!")
     conn.close()
@@ -57,9 +70,7 @@ def run_server():
 
 server.bind(('0.0.0.0', port))  # Listen on all interfaces
 print("Server running on: 0.0.0.0, Listening on:", port)
-players = {
-    "admin": {"IP":"0.0.0.0","GP":-1,"SEL":"giraffe"}
-} 
+
 #usage: {IP,POINTS,SUGGESTION}
 run_server()
 # server.setblocking(False)  # Make it non-blocking
