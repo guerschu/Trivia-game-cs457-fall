@@ -39,7 +39,10 @@ def send(conn, message):
 
 def serve_client(conn, addr):
     log.logIt(f"Connection from client at: {addr} with chosen name: ")
-
+    send(conn,"!What's your username")
+    send(conn,"!What trivia do you want")
+    usrn = ""
+    setup = 0 # 0 means needs username, 1 means needs selection, 2 means all set up
     while True:
         msg_len = conn.recv(64).decode('utf-8')
         if msg_len:
@@ -50,7 +53,14 @@ def serve_client(conn, addr):
                 update_conns()
                 break
             if message[0] == "!":
-                
+                if setup == 0:
+                    players[message[1:]] = {addr,0,""}
+                    usrn = message[1:]
+                    setup += 1
+                    send(conn, f"Recieved your username: {usrn}")
+                elif setup == 1:
+                    players[usrn].update({"SEL": message[1:]})
+                    send(conn, f"Recieved your selection: {message[1:]}")
             log.logIt(f"Client at addr says: {message}")
             send(conn, "Server: we hear you!")
     conn.close()

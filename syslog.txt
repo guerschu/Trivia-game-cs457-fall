@@ -36,6 +36,36 @@
 2024-12-03 03:54:03Current connections: 1
 2024-12-03 03:54:03Client at addr says: l
 2024-12-03 03:54:26Current connections: 1
+2024-12-03 17:04:32Connection from client at: ('127.0.0.1', 47830) with chosen name: 
+2024-12-03 17:04:32Current connections: 1
+2024-12-03 17:05:12Connection from client at: ('127.0.0.1', 40464) with chosen name: 
+2024-12-03 17:05:12Current connections: 1
+2024-12-03 17:05:12Client at addr says: jo
+2024-12-03 17:05:19Client at addr says: jokitjo
+2024-12-03 17:05:24Client at addr says: animal
+2024-12-03 17:05:28Current connections: 1
+2024-12-03 17:14:03Connection from client at: ('127.0.0.1', 58492) with chosen name: 
+2024-12-03 17:14:03Current connections: 1
+2024-12-03 17:14:03Client at addr says: user
+2024-12-03 17:14:09Client at addr says: jokitjo
+2024-12-03 17:14:12Client at addr says: animal
+2024-12-03 17:14:21Current connections: 1
+2024-12-03 17:15:07Connection from client at: ('127.0.0.1', 60982) with chosen name: 
+2024-12-03 17:15:07Current connections: 1
+2024-12-03 17:15:07Client at addr says: user
+2024-12-03 17:15:10Client at addr says: jo
+2024-12-03 17:15:13Client at addr says: animal
+2024-12-03 17:15:23Current connections: 1
+2024-12-03 17:16:22Connection from client at: ('127.0.0.1', 37570) with chosen name: 
+2024-12-03 17:16:22Current connections: 1
+2024-12-03 17:16:22Client at addr says: jo
+2024-12-03 17:16:23Client at addr says: !jo
+2024-12-03 17:20:09Connection from client at: ('127.0.0.1', 57598) with chosen name: 
+2024-12-03 17:20:09Current connections: 1
+2024-12-03 17:20:09Client at addr says: user
+2024-12-03 17:20:11Client at addr says: !jo
+2024-12-03 17:20:15Client at addr says: !animal
+2024-12-03 17:20:20Current connections: 1
 2024-12-03 16:32:01Connection from client at: ('129.82.44.150', 52704) with chosen name: 
 2024-12-03 16:32:01Client at addr says: jo
 2024-12-03 16:32:01Current connections: 1
@@ -46,3 +76,4 @@
 2024-12-03 16:59:01Connection from client at: ('127.0.0.1', 43396) with chosen name: 
 2024-12-03 16:59:01Client at addr says: mal
 2024-12-03 16:59:01Current connections: 1
+
