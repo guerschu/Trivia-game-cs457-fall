@@ -3,7 +3,7 @@ import sys
 import custom_logger as log
 import threading
 import splash
-
+ #Below is dictionaries to keep track of players and points, along with the questions with the answer keys
 players = {
     "admin": {"IP":"0.0.0.0","GP":-1,"SEL":"giraffe"}
 } 
@@ -20,7 +20,8 @@ Questions ={
     "locations": {"1": splash.location_questions0, "2": splash.location_questions1, "3": splash.location_questions2, "4": splash.location_questions3, "5": splash.location_questions4, "6":splash.location_questions5}
 }
 
-#program starts here
+#program starts here 
+# we are getting the length to make sure it has all the right parts and also added the neededd -p
 if len(sys.argv) != 3 or sys.argv[1] != "-p":
     print("usage:", sys.argv[0], "-p <PORT>")
     sys.exit(1)
@@ -30,11 +31,13 @@ port = int(sys.argv[2])
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 # server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
+# this is going to update the thread count in server to see how amny have connected
 def update_conns():
     strcur = f"Current connections: {threading.active_count() - 1}"
     log.logIt(strcur)
     print(strcur)
 
+# send is going to be able to send the message to client without having to right the code over and over
 def send(conn, message):
     message = message.encode('utf-8')
     msg_len = len(message)
@@ -43,6 +46,7 @@ def send(conn, message):
     conn.send(share_len)
     conn.send(message)
 
+# This si going to get a message from client and start the connnection to see what it is saying and update
 def serve_client(conn, addr):
     log.logIt(f"Connection from client at: {addr} with chosen name: ")
     
@@ -61,6 +65,7 @@ def serve_client(conn, addr):
                 send(conn, "Server: we hear you!")
     conn.close()
 
+# this is where it fully connects to client and this is where we should see all of the starting of the connections
 def run_server():
     try:
         server.listen()  # Maximum number of clients to queue

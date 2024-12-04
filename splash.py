@@ -52,6 +52,14 @@ def wrong():
     |________________________________|
     '''
 
+def scoreBoard(players):
+    scoreboard_str = "______________________SCOREBOARD___________________\n"
+    for player in players:
+        scoreboard_str += f"{player}: {player['GP']}\n"
+    scoreboard_str = "___________________________________________________\n"
+    return scoreboard_str
+
+
 def left(userName):
     return f'''
     ____________________________________________________
