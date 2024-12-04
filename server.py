@@ -9,9 +9,15 @@ players = {
 } 
 
 Answers = {
-    "animal": {"1": "A", "2": "B", "3": "A", "4": "A", "5": "C", "6": "B"}
-    "history": {"1": "A", "2": "B", "3": "B", "4": "C", "5": "A", "6": "B"}
+    "animal": {"1": "A", "2": "B", "3": "A", "4": "A", "5": "C", "6": "B"},
+    "history": {"1": "A", "2": "B", "3": "B", "4": "C", "5": "A", "6": "B"},
     "locations": {"1": "A", "2": "B", "3": "A", "4": "A", "5": " B", "6": "C"}
+}
+
+Questions ={
+    "animal": {"1": splash.animal_question0, "2": splash.animal_question1, "3": splash.animal_question2, "4": splash.animal_question3, "5": splash.animal_question4, "6": splash.animal_question5},
+    "history": {"1": splash.history_questions0, "2": splash.history_questions1, "3": splash.history_questions2, "4": splash.history_questions3, "5": splash.history_questions4, "6": splash.history_questions5},
+    "locations": {"1": splash.location_questions0, "2": splash.location_questions1, "3": splash.location_questions2, "4": splash.location_questions3, "5": splash.location_questions4, "6":splash.location_questions5}
 }
 
 #program starts here
@@ -39,10 +45,7 @@ def send(conn, message):
 
 def serve_client(conn, addr):
     log.logIt(f"Connection from client at: {addr} with chosen name: ")
-    send(conn,"!What's your username")
-    send(conn,"!What trivia do you want")
-    usrn = ""
-    setup = 0 # 0 means needs username, 1 means needs selection, 2 means all set up
+    
     while True:
         msg_len = conn.recv(64).decode('utf-8')
         if msg_len:
@@ -53,16 +56,9 @@ def serve_client(conn, addr):
                 update_conns()
                 break
             if message[0] == "!":
-                if setup == 0:
-                    players[message[1:]] = {addr,0,""}
-                    usrn = message[1:]
-                    setup += 1
-                    send(conn, f"Recieved your username: {usrn}")
-                elif setup == 1:
-                    players[usrn].update({"SEL": message[1:]})
-                    send(conn, f"Recieved your selection: {message[1:]}")
-            log.logIt(f"Client at addr says: {message}")
-            send(conn, "Server: we hear you!")
+                
+                log.logIt(f"Client at addr says: {message}")
+                send(conn, "Server: we hear you!")
     conn.close()
 
 def run_server():
