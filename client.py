@@ -4,20 +4,6 @@ import time
 import splash
 import libclient
 
-validOptions = ["animal","exit","history","locations"]
-
-def waitUserRequest():
-    splash.options()
-    while True:
-        user_input = input("Enter your input (type 'exit' to quit): ").lower()
-        if user_input == "exit" or user_input == 'x':
-            sys.exit(1)
-        if user_input in validOptions:
-            splash.youChose(user_input)
-            return user_input.lower()
-        else:
-            print(print('''|  Choose a valid option and try again   |'''))
-
 # the main part of the program we will be using
 
 if len(sys.argv) != 5 or sys.argv[1] != "-i" or sys.argv[3] != "-p":
@@ -30,16 +16,9 @@ splash.home()
 #<action> <value> <name>
 
 host, port = sys.argv[2], int(sys.argv[4])
-category = waitUserRequest()
-splash.userName()
-clientName = input("Type your username (type 'exit' to quit): ")
-print(f"Attempting to connect {clientName} to {host} on port: {port}...")
+print(f"Attempting to connect to {host} on port: {port}...")
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-try:
-    client.connect((host, port))
-except socket.error as e:
-    print(f"Error connecting to server: {e}")
-    sys.exit(1)
+client.connect((host, port))
 #client.setblocking(False)
 
 def send(message):
@@ -50,30 +29,25 @@ def send(message):
     client.send(share_len)
     client.send(message)
 
-def start(usr_name):
-    print(f"Game started for {usr_name}")
-    splash.lobby(usr_name)
+def start():
     #implement here what the server is sending back and all that
     try:
-        send(usr_name)
+        print(splash.home())
         while True:
-            try:
-                msg_len = client.recv(64).decode('utf-8')
-                if msg_len:
-                    msg_len = int(msg_len)
-                    message = client.recv(msg_len).decode('utf-8')
-                    if message == "DISCON":
-                        break
-                    if message[0] == "!":
-                        print(f"Server: {message}")
-                        send("!"+input("Response: "))
+            msg_len = client.recv(64).decode('utf-8')
+            if msg_len:
+                msg_len = int(msg_len)
+                message = client.recv(msg_len).decode('utf-8')
+                if message == "DISCON":
+                    break
+                if message[0] == "!":
                     print(f"Server: {message}")
-                    #if meeting proper conditons about game ask for user input to send
-            except Exception as e:
-                print(f"An error occurred: {e}")
+                    send("!"+input("Response: "))
+                print(f"Server: {message}")
+                #if meeting proper conditons about game ask for user input to send
     except KeyboardInterrupt:
         print("You interrupted your game! Disconnecting...")
         send("DISCON")
         client.close()
 
-start(clientName)
+start()
