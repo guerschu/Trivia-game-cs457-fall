@@ -52,6 +52,13 @@ def wrong():
     |________________________________|
     '''
 
+def waiting():
+    return '''
+    _____________________________________
+    | Waiting For Other Players To Join |
+    |___________________________________|
+    '''
+
 def scoreBoard(players):
     
     scoreboard_str = "______________________SCOREBOARD___________________\n"
@@ -61,6 +68,24 @@ def scoreBoard(players):
     scoreboard_str += "___________________________________________________\n"
     return scoreboard_str
 
+def winCondition(players):
+    highest_score = 0
+    highest_scorer = None
+    win_str = "___________________________________________________________\n"
+    for player in players:
+        if player != "admin" and players[player]['GP'] > highest_score:
+            highest_score = players[player]['GP']
+            highest_scorer = players[player]
+    win_str += f"| {highest_scorer} Wins with a Score of: {highest_score}  |\n"
+    win_str +=  "___________________________________________________________\n"
+    return win_str
+
+def thanksForPlaying():
+    return f'''
+    ____________________________________________________
+    |                 Thanks For Playing               |
+    |__________________________________________________|
+    '''
 
 def left(userName):
     return f'''
