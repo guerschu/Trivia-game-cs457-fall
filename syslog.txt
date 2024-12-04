@@ -242,3 +242,27 @@
 2024-12-03 20:37:23Client at addr says: !mal
 2024-12-03 20:37:24Client at addr says: !Animal
 2024-12-03 20:37:25Client at addr says: !Animal
+2024-12-03 20:46:08Connection from client at: ('129.82.44.142', 60798) with chosen name: 
+2024-12-03 20:46:08Current connections: 1
+2024-12-03 20:46:11Client at addr says: !mal
+2024-12-03 20:46:11Connection from client at: ('127.0.0.1', 56424) with chosen name: 
+2024-12-03 20:46:11Current connections: 2
+2024-12-03 20:46:12Client at addr says: !Animal
+2024-12-03 20:46:15Client at addr says: !Dope
+2024-12-03 20:46:17Client at addr says: !Animal
+2024-12-03 20:48:06Connection from client at: ('129.82.44.142', 50566) with chosen name: 
+2024-12-03 20:48:06Current connections: 1
+2024-12-03 20:48:08Client at addr says: !mal
+2024-12-03 20:48:09Connection from client at: ('127.0.0.1', 54832) with chosen name: 
+2024-12-03 20:48:09Current connections: 2
+2024-12-03 20:48:10Client at addr says: !Animal
+2024-12-03 20:48:10Client at addr says: !a
+2024-12-03 20:48:12Client at addr says: !Animal
+2024-12-03 20:49:02Connection from client at: ('129.82.44.142', 50720) with chosen name: 
+2024-12-03 20:49:02Current connections: 1
+2024-12-03 20:49:02Connection from client at: ('127.0.0.1', 42814) with chosen name: 
+2024-12-03 20:49:02Current connections: 2
+2024-12-03 20:49:03Client at addr says: !mal
+2024-12-03 20:49:04Client at addr says: !A
+2024-12-03 20:49:05Client at addr says: !Animal
+2024-12-03 20:49:06Client at addr says: !Animal

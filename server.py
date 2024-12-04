@@ -18,21 +18,24 @@ lobby = {
         "admin": {
         "IP":"0.0.0.0",
         "GP":-1,
-        "SEL":"giraffe" 
+        "SEL":"giraffe",
+        "Done": False
         }
     },
     "history": {
         "admin": {
         "IP":"0.0.0.0",
         "GP":-1,
-        "SEL":"giraffe"
+        "SEL":"giraffe",
+        "Done": False
         }
     },
     "locations": {
         "admin": {
         "IP":"0.0.0.0",
         "GP":-1,
-        "SEL":"giraffe"
+        "SEL":"giraffe",
+        "Done": False
         }
     }
 }
@@ -107,6 +110,17 @@ def remove_player(name):
         del lobby[players[name]["SEL"]][name]
     del players[name]
 
+def await_players(selection):
+    all_done = False
+    while not all_done:
+        boo = len(lobby[selection])
+        amount = 0
+        for k,f in lobby[selection].items():
+            if amount >= boo:
+                all_done = True
+            if f["Done"]:
+                amount += 1
+
 def send(conn, message):
     message = message.encode('utf-8')
     msg_len = len(message)
@@ -166,8 +180,10 @@ def serve_client(conn, addr):
                         players[usrn].update({"GP":(players[usrn]["GP"]+1)})
                         send(conn, splash.correct())
                     else:
-                        send(conn, splash.wrong())  
+                        send(conn, splash.wrong())
+                    lobby[selection][usrn]["Done"] = True
                     send(conn, splash.scoreBoard(players))
+                await_players(selection)
             break
     send(conn, splash.winCondition(lobby[selection]))
     send(conn, splash.thanksForPlaying())
