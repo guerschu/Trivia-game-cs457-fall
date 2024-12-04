@@ -137,6 +137,7 @@ def serve_client(conn, addr):
             log.logIt(f"Client at addr says: {message}")
     #print(players)
     selection = players[usrn]["SEL"]
+    send(conn, splash.waiting())
     while True:
         if lobby_status(selection):
             for i, func in Questions[selection].items():
