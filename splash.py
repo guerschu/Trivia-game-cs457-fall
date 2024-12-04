@@ -52,6 +52,13 @@ def wrong():
     |________________________________|
     '''
 
+def left(userName):
+    return f'''
+    ____________________________________________________
+    |            {userName} has left the Game          |
+    |__________________________________________________|
+    '''
+
 # ANIMAL TRIVIA
 
 def animal_question0():
