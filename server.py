@@ -158,8 +158,8 @@ def serve_client(conn, addr):
                         send(conn, splash.wrong())  
                     send(conn, splash.scoreBoard(players))
             break
-            send(conn, splash.winCondition(players))
-            send(conn, splash.thanksForPlaying())
+    send(conn, splash.winCondition(players))
+    send(conn, splash.thanksForPlaying())
     conn.close()
     
 
