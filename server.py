@@ -8,7 +8,8 @@ players = {
     "admin": {
         "IP":"0.0.0.0",
         "GP":-1,
-        "SEL":"giraffe"
+        "SEL":"giraffe",
+        "Done": False
         }
 }
 
@@ -17,7 +18,7 @@ lobby = {
         "admin": {
         "IP":"0.0.0.0",
         "GP":-1,
-        "SEL":"giraffe"
+        "SEL":"giraffe" 
         }
     },
     "history": {
@@ -37,9 +38,18 @@ lobby = {
 }
 
 status = {
-    "animal": False,
-    "history": False,
-    "locations": False
+    "animal": {
+        "val": False,
+        "E": False
+    },
+    "history": {
+        "val": False,
+        "E": False
+    },
+    "locations": {
+        "val": False,
+        "E": False
+    }
 }
 
 Answers = {
@@ -83,10 +93,10 @@ def update_conns():
     print(strcur)
 
 def start_lobby(lobby_name):
-    status[lobby_name] = True
+    status[lobby_name]["val"] = True
 
 def lobby_status(lobby_name):
-    return status[lobby_name]
+    return status[lobby_name]["val"]
 
 def update_lobby(lobby_name):
     if (not lobby_status(lobby_name)) and (len(lobby[lobby_name]) >= 3):
@@ -125,7 +135,7 @@ def serve_client(conn, addr):
                 if setup == 0:
                     usrn = message[1:]
                     #print(usrn)
-                    players[usrn] = {"IP":addr[0],"GP":0,"SEL":""}
+                    players[usrn] = {"IP":addr[0],"GP":0,"SEL":"", "Done": False}
                     setup += 1
                     send(conn, splash.youChose(message[1:]))
                 elif setup == 1:
@@ -159,9 +169,10 @@ def serve_client(conn, addr):
                         send(conn, splash.wrong())  
                     send(conn, splash.scoreBoard(players))
             break
-    send(conn, splash.winCondition(players))
+    send(conn, splash.winCondition(lobby[selection]))
     send(conn, splash.thanksForPlaying())
     send(conn, "DISCON")
+    remove_player(usrn)
     conn.close()
     
 

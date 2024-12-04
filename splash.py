@@ -75,7 +75,7 @@ def winCondition(players):
     for player in players:
         if player != "admin" and players[player]['GP'] > highest_score:
             highest_score = players[player]['GP']
-            highest_scorer = players[player]
+            highest_scorer = player
     win_str += f"| {highest_scorer} Wins with a Score of: {highest_score}  |\n"
     win_str +=  "___________________________________________________________\n"
     return win_str
