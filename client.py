@@ -58,6 +58,9 @@ def start(usr_name):
                 message = client.recv(msg_len).decode('utf-8')
                 if message == "DISCON":
                     break
+                if message[0] == "!":
+                    print(f"Server: {message}")
+                    send("!"+input("Response: "))
                 print(f"Server: {message}")
                 #if meeting proper conditons about game ask for user input to send
     except KeyboardInterrupt:
