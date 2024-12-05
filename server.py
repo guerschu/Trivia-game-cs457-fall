@@ -9,7 +9,8 @@ players = {
         "IP":"0.0.0.0",
         "GP":-1,
         "SEL":"giraffe",
-        "Done": False
+        "Done": False,
+        "Name": "admin"
         }
 }
 
@@ -18,21 +19,24 @@ lobby = {
         "admin": {
         "IP":"0.0.0.0",
         "GP":-1,
-        "SEL":"giraffe" 
+        "SEL":"giraffe",
+        "Name": "admin"
         }
     },
     "history": {
         "admin": {
         "IP":"0.0.0.0",
         "GP":-1,
-        "SEL":"giraffe"
+        "SEL":"giraffe",
+        "Name": "admin"
         }
     },
     "locations": {
         "admin": {
         "IP":"0.0.0.0",
         "GP":-1,
-        "SEL":"giraffe"
+        "SEL":"giraffe",
+        "Name": "admin"
         }
     }
 }
@@ -135,12 +139,14 @@ def serve_client(conn, addr):
                 if setup == 0:
                     usrn = message[1:]
                     #print(usrn)
-                    players[usrn] = {"IP":addr[0],"GP":0,"SEL":"", "Done": False}
+                    players[usrn] = {"IP":addr[0],"GP":0,"SEL":"", "Done": False, "Name": usrn}
                     setup += 1
                     send(conn, splash.youChose(message[1:]))
                 elif setup == 1:
                     if validate(conn, message[1:]):
                         players[usrn].update({"SEL": (message[1:].lower())})
+                        print(players[usrn]["Name"] + " Selected Category "+ message[1:])
+                        log.logIt(players[usrn]["Name"] + " Selected Category "+ message[1:])
                         lobby[players[usrn]["SEL"]][usrn] = players[usrn]
                         update_lobby(players[usrn]["SEL"])
                         inlobby = True
@@ -151,24 +157,76 @@ def serve_client(conn, addr):
     while True:
         if lobby_status(selection):
             for i, func in Questions[selection].items():
-                print(i)
-                send(conn, "!"+func())
+                player_name = players[usrn]["Name"]
+                try:
+                    if player_name == usrn:
+                        print(f"{player_name} : got question {i}")
+                        log.logIt(f"{player_name} : got question {i}")
+                except KeyError:
+                    print(f"KeyError: 'Name' not found for user {usrn}")
+                    send(conn, "An error occurred. Please try again.")
+                send(conn, "!" + func())
                 msg_len = conn.recv(64).decode('utf-8')
                 if msg_len:
                     msg_len = int(msg_len)
                     message = conn.recv(msg_len).decode('utf-8')
-                    print(message)
+                    try:
+                        if player_name == usrn:
+                            print(f"{player_name} Answered: {i} with {message[1:]}")
+                            log.logIt(f"{player_name} Answered: {i} with {message[1:]}")
+                    except KeyError as e:
+                        log.logIt(f"KeyError: {e}")
+                        send(conn, "An error occurred. Please try again. Happened with the Lobby accessing a Name")
+                        break
                     if message == "DISCON":
                         update_conns()
                         remove_player(usrn)
                         break
                     if message[1:] == Answers[selection][i]:
-                        players[usrn].update({"GP":(players[usrn]["GP"]+1)})
+                        players[usrn].update({"GP": players[usrn]["GP"] + 1})
+                        print(f"{player_name} Got It Correct!")
+                        log.logIt(f"{player_name} Got It Correct!")
                         send(conn, splash.correct())
+                    elif message[1:] in ['A', 'B', 'C']:
+                        print(f"{player_name} Got It Wrong! Womp Womp")
+                        log.logIt(f"{player_name} Got It Wrong! Womp Womp")
+                        send(conn, splash.wrong())
                     else:
-                        send(conn, splash.wrong())  
-                    send(conn, splash.scoreBoard(players))
-            break
+                        incorrecInput = False
+                        while incorrecInput:
+                            send(conn, "Incorrect Input Type")
+                            send(conn, "!"+func())
+                            msg_len = conn.recv(64).decode('utf-8')
+                            if msg_len:
+                                msg_len = int(msg_len)
+                                message = conn.recv(msg_len).decode('utf-8')
+                                try:
+                                    if player_name == usrn:
+                                        print(f"{player_name} Answered: {i} with {message[1:]}")
+                                        log.logIt(f"{player_name} Answered: {i} with {message[1:]}")
+                                except KeyError as e:
+                                    log.logIt(f"KeyError: {e}")
+                                    send(conn, "An error occurred. Please try again. Happened with the Lobby accessing a Name")
+                                    break
+                                if message == "DISCON":
+                                    update_conns()
+                                    remove_player(usrn)
+                                    break
+                                if message[1:] == Answers[selection][i]:
+                                    players[usrn].update({"GP": players[usrn]["GP"] + 1})
+                                    print(f"{player_name} Got It Correct!")
+                                    log.logIt(f"{player_name} Got It Correct!")
+                                    send(conn, splash.correct())
+                                    break
+                                elif message[1:] in ['A', 'B', 'C']:
+                                    print(f"{player_name} Got It Wrong! Womp Womp")
+                                    log.logIt(f"{player_name} Got It Wrong! Womp Womp")
+                                    send(conn, splash.wrong())
+                                    break
+            send(conn, splash.scoreBoard(players))
+            if int(i) > 6:
+                break
+        
     send(conn, splash.winCondition(lobby[selection]))
     send(conn, splash.thanksForPlaying())
     send(conn, "DISCON")
@@ -183,9 +241,9 @@ def run_server():
             conn, addr = server.accept()
             thread = threading.Thread(target=serve_client, args=(conn, addr))
             thread.start()
-            strcur = f"Current connections: {threading.activeCount() - 1}"
+            strcur = f"Current connections: {threading.active_count() - 1} from IP {addr[0]}"
             log.logIt(strcur)
-            print(strcur)
+            print(strcur + " From " + addr[0])
     except KeyboardInterrupt:
         print("Service interupted by admin, exiting...")
 
