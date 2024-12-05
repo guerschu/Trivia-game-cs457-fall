@@ -590,3 +590,154 @@
 2024-12-04 21:47:38Current connections: 2
 2024-12-04 21:47:39a Answered: 1 with ISCON
 2024-12-04 21:47:39Current connections: 1
+2024-12-04 22:53:33Attempting to connect to 127.0.0.1 on port: 50505...
+2024-12-04 22:53:33Connection from client at: ('127.0.0.1', 35276) with chosen name: 
+2024-12-04 22:53:33Current connections: 1 from IP 127.0.0.1
+2024-12-04 22:53:33Client got message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-04 22:53:34Client got another message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-04 22:53:34Client got message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-04 22:53:36Client got another message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-04 22:54:06Client Disconnected from KeyBoard
+2024-12-04 22:54:31Attempting to connect to 127.0.0.1 on port: 50505...
+2024-12-04 22:54:31Connection from client at: ('127.0.0.1', 44424) with chosen name: 
+2024-12-04 22:54:31Current connections: 1 from IP 127.0.0.1
+2024-12-04 22:54:31Client got message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-04 22:54:33Client got another message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-04 22:54:33Client got message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-04 22:54:34Client got another message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-04 22:54:37Client Disconnected from KeyBoard
+2024-12-04 22:55:03Attempting to connect to 127.0.0.1 on port: 50505...
+2024-12-04 22:55:03Connection from client at: ('127.0.0.1', 32826) with chosen name: 
+2024-12-04 22:55:03Current connections: 1 from IP 127.0.0.1
+2024-12-04 22:55:03Client got message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-04 22:55:04Client got another message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-04 22:55:04User A added to current players
+2024-12-04 22:55:04Client got message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-04 22:55:04Client at addr says: !A
+2024-12-04 22:55:07Client got another message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-04 22:55:07Client got another message from Server: 
+    __________________________________
+    |Great you chose: A          |
+    |________________________________|
+    
+2024-12-04 22:55:07Client got another message from Server: 
+    __________________________________
+    |Great you chose: Animal          |
+    |________________________________|
+    
+2024-12-04 22:55:14Client Disconnected from KeyBoard
+2024-12-04 22:56:34Attempting to connect to 127.0.0.1 on port: 50505...
+2024-12-04 22:56:34Connection from client at: ('127.0.0.1', 45302) with chosen name: 
+2024-12-04 22:56:34Current connections: 1 from IP 127.0.0.1
+2024-12-04 22:56:34Client got message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-04 22:56:35Client got another message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-04 22:56:35User A added to current players
+2024-12-04 22:56:35Client got message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-04 22:56:35Client at addr says: !A
+2024-12-04 22:56:36Client got another message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-04 22:56:36Client got another message from Server: 
+    __________________________________
+    |Great you chose: A          |
+    |________________________________|
+    
+2024-12-04 22:56:37A Selected Category Animal
+2024-12-04 22:56:37Client got another message from Server: 
+    __________________________________
+    |Great you chose: Animal          |
+    |________________________________|
+    
+2024-12-04 22:56:37Client at addr says: !Animal
+2024-12-04 22:56:37Client got another message from Server: 
+    _____________________________________
+    | Waiting For Other Players To Join |
+    |___________________________________|
+    
+2024-12-04 22:56:39Client Disconnected from KeyBoard
