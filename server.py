@@ -31,7 +31,7 @@ lobby = {
         "Name": "admin"
         }
     },
-    "locations": {
+    "location": {
         "admin": {
         "IP":"0.0.0.0",
         "GP":-1,
@@ -50,7 +50,7 @@ status = {
         "val": False,
         "E": False
     },
-    "locations": {
+    "location": {
         "val": False,
         "E": False
     }
@@ -59,13 +59,13 @@ status = {
 Answers = {
     "animal": {"1": "A", "2": "B", "3": "A", "4": "A", "5": "C", "6": "B"},
     "history": {"1": "A", "2": "B", "3": "B", "4": "C", "5": "A", "6": "B"},
-    "locations": {"1": "A", "2": "B", "3": "A", "4": "A", "5": " B", "6": "C"}
+    "location": {"1": "A", "2": "B", "3": "A", "4": "A", "5": " B", "6": "C"}
 }
 
 Questions ={
     "animal": {"1": splash.animal_question0, "2": splash.animal_question1, "3": splash.animal_question2, "4": splash.animal_question3, "5": splash.animal_question4, "6": splash.animal_question5},
     "history": {"1": splash.history_questions0, "2": splash.history_questions1, "3": splash.history_questions2, "4": splash.history_questions3, "5": splash.history_questions4, "6": splash.history_questions5},
-    "locations": {"1": splash.location_questions0, "2": splash.location_questions1, "3": splash.location_questions2, "4": splash.location_questions3, "5": splash.location_questions4, "6":splash.location_questions5}
+    "location": {"1": splash.location_questions0, "2": splash.location_questions1, "3": splash.location_questions2, "4": splash.location_questions3, "5": splash.location_questions4, "6":splash.location_questions5}
 }
 
 #program starts here
@@ -154,6 +154,8 @@ def serve_client(conn, addr):
     #print(players)
     selection = players[usrn]["SEL"]
     send(conn, splash.waiting())
+    print(f"{len(lobby[selection]) -1}")
+    barrier = threading.Barrier(len(lobby[selection])-1)
     while True:
         if lobby_status(selection):
             for i, func in Questions[selection].items():
@@ -162,10 +164,12 @@ def serve_client(conn, addr):
                     if player_name == usrn:
                         print(f"{player_name} : got question {i}")
                         log.logIt(f"{player_name} : got question {i}")
-                except KeyError:
-                    print(f"KeyError: 'Name' not found for user {usrn}")
+                    send(conn, "!" + func())
+                except KeyError in e:
+                    print(f"KeyError:  {e}")
                     send(conn, "An error occurred. Please try again.")
                 send(conn, "!" + func())
+                barrier.wait()
                 msg_len = conn.recv(64).decode('utf-8')
                 if msg_len:
                     msg_len = int(msg_len)
@@ -174,8 +178,8 @@ def serve_client(conn, addr):
                         if player_name == usrn:
                             print(f"{player_name} Answered: {i} with {message[1:]}")
                             log.logIt(f"{player_name} Answered: {i} with {message[1:]}")
-                    except KeyError as e:
-                        log.logIt(f"KeyError: {e}")
+                    except KeyError:
+                        log.logIt(f"KeyError: something went wrong in the name in username on line 178 - 180")
                         send(conn, "An error occurred. Please try again. Happened with the Lobby accessing a Name")
                         break
                     if message == "DISCON":
@@ -187,14 +191,18 @@ def serve_client(conn, addr):
                         print(f"{player_name} Got It Correct!")
                         log.logIt(f"{player_name} Got It Correct!")
                         send(conn, splash.correct())
-                    elif message[1:] in ['A', 'B', 'C']:
+                        
+                    elif message[1:] == 'A' or  message[1:] ==  'B' or message[1:] == 'C':
                         print(f"{player_name} Got It Wrong! Womp Womp")
                         log.logIt(f"{player_name} Got It Wrong! Womp Womp")
                         send(conn, splash.wrong())
+                        
                     else:
+                        print("GOT HERE")
                         incorrecInput = False
                         while incorrecInput:
-                            send(conn, "Incorrect Input Type")
+                            send(conn, splash.invalidInput())
+                            print(f"{func()}")
                             send(conn, "!"+func())
                             msg_len = conn.recv(64).decode('utf-8')
                             if msg_len:
@@ -217,18 +225,24 @@ def serve_client(conn, addr):
                                     print(f"{player_name} Got It Correct!")
                                     log.logIt(f"{player_name} Got It Correct!")
                                     send(conn, splash.correct())
-                                    break
-                                elif message[1:] in ['A', 'B', 'C']:
+                                    print(f"Number of barriers waiting + {barrier.n_waiting}")
+                                elif message[1:] != Answers[selection][i] and message[1:] == 'A' or message[1:] == 'B' or message[1:] == 'C':
                                     print(f"{player_name} Got It Wrong! Womp Womp")
                                     log.logIt(f"{player_name} Got It Wrong! Womp Womp")
                                     send(conn, splash.wrong())
-                                    break
-            send(conn, splash.scoreBoard(players))
-            if int(i) > 6:
-                break
+                    barrier.wait()
+                    send(conn, splash.scoreBoard(players))
+                    barrier.reset()
+                    if int(i) > 6:
+                        break
         
     send(conn, splash.winCondition(lobby[selection]))
-    send(conn, splash.thanksForPlaying())
+    send(conn, "!"+splash.thanksForPlaying())
+    barrier.wait()
+    if msg_len:
+            msg_len = int(msg_len)
+            message = conn.recv(msg_len).decode('utf-8')
+            validate(conn, message)
     send(conn, "DISCON")
     remove_player(usrn)
     conn.close()

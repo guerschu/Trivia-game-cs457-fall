@@ -52,6 +52,15 @@ def wrong():
     |________________________________|
     '''
 
+def invalidInput():
+    return '''
+    _________________________________________
+    |           Invalid Input!              |
+    |Try Again with accebtiable answers of: |
+    |             A, B, or C                |
+    |_______________________________________|
+    '''
+
 def waiting():
     return '''
     _____________________________________
@@ -84,6 +93,7 @@ def thanksForPlaying():
     return f'''
     ____________________________________________________
     |                 Thanks For Playing               |
+    |              Press x or exit to leave            |
     |__________________________________________________|
     '''
 
@@ -183,12 +193,13 @@ def history_questions0():
 
 def history_questions1():
     return '''
-    ________________________________________________________________________________________
-    | What is not the name of the period of starvation lasting from 1845 to 1852 in Ireland? |
-    |                           A: The Irish Potato Famine                                  |
-    |                           B: Great Leap Forward                                       |
-    |                           C: The Great Hunger                                         |
-    |_______________________________________________________________________________________|
+    ____________________________________________________
+    | What is not the name of the period of starvation |
+    |     lasting from 1845 to 1852 in Ireland?        |
+    |        A: The Irish Potato Famine                |
+    |        B: Great Leap Forward                     |
+    |        C: The Great Hunger                       |
+    |__________________________________________________|
     '''
 #Great Leap Forward
 
