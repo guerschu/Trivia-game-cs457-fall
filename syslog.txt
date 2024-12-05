@@ -423,3 +423,65 @@
 2024-12-04 12:47:03Client at addr says: !Animal
 2024-12-04 12:48:58KeyError: 'Name'
 2024-12-04 12:49:09KeyError: 'Name'
+2024-12-04 19:52:12Connection from client at: ('127.0.0.1', 36488) with chosen name: 
+2024-12-04 19:52:12Current connections: 1 from IP 127.0.0.1
+2024-12-04 19:52:27Connection from client at: ('127.0.0.1', 45858) with chosen name: 
+2024-12-04 19:52:27Current connections: 2 from IP 127.0.0.1
+2024-12-04 19:52:30Client at addr says: !hi
+2024-12-04 19:52:31Client at addr says: !Animal
+2024-12-04 19:52:36Client at addr says: !jo
+2024-12-04 19:52:39Client at addr says: !Animal
+2024-12-04 19:57:42KeyError: 'Name'
+2024-12-04 19:57:44KeyError: 'Name'
+2024-12-04 20:09:43Connection from client at: ('127.0.0.1', 53808) with chosen name: 
+2024-12-04 20:09:43Current connections: 1 from IP 127.0.0.1
+2024-12-04 20:09:45Client at addr says: !jo
+2024-12-04 20:09:46Client at addr says: !Animal
+2024-12-04 20:09:49Connection from client at: ('127.0.0.1', 36556) with chosen name: 
+2024-12-04 20:09:49Current connections: 2 from IP 127.0.0.1
+2024-12-04 20:09:51Client at addr says: !hi
+2024-12-04 20:09:53Client at addr says: !Animal
+2024-12-04 20:10:04KeyError: 'Name'
+2024-12-04 20:10:38KeyError: 'Name'
+2024-12-04 20:19:42Connection from client at: ('127.0.0.1', 48196) with chosen name: 
+2024-12-04 20:19:42Current connections: 1 from IP 127.0.0.1
+2024-12-04 20:19:43Client at addr says: !jo
+2024-12-04 20:19:45Client at addr says: !Animal
+2024-12-04 20:19:50Connection from client at: ('127.0.0.1', 53304) with chosen name: 
+2024-12-04 20:19:50Current connections: 2 from IP 127.0.0.1
+2024-12-04 20:19:52Client at addr says: !hi
+2024-12-04 20:19:55Client at addr says: !Animal
+2024-12-04 20:20:50Current connections: 2
+2024-12-04 20:20:52Current connections: 1
+2024-12-04 20:22:23Connection from client at: ('127.0.0.1', 48688) with chosen name: 
+2024-12-04 20:22:23Current connections: 1 from IP 127.0.0.1
+2024-12-04 20:22:25Client at addr says: !jo
+2024-12-04 20:22:27Client at addr says: !Animal
+2024-12-04 20:22:30Connection from client at: ('127.0.0.1', 43582) with chosen name: 
+2024-12-04 20:22:30Current connections: 2 from IP 127.0.0.1
+2024-12-04 20:22:32Client at addr says: !hi
+2024-12-04 20:22:34Client at addr says: !Animal
+2024-12-04 20:24:02Connection from client at: ('127.0.0.1', 57630) with chosen name: 
+2024-12-04 20:24:02Current connections: 1 from IP 127.0.0.1
+2024-12-04 20:24:03Client at addr says: !jo
+2024-12-04 20:24:05Client at addr says: !Animal
+2024-12-04 20:24:08Connection from client at: ('127.0.0.1', 58232) with chosen name: 
+2024-12-04 20:24:08Current connections: 2 from IP 127.0.0.1
+2024-12-04 20:24:10Client at addr says: !hi
+2024-12-04 20:24:12Client at addr says: !Animal
+2024-12-04 20:28:06Connection from client at: ('127.0.0.1', 54252) with chosen name: 
+2024-12-04 20:28:06Current connections: 1 from IP 127.0.0.1
+2024-12-04 20:28:09Client at addr says: !jo
+2024-12-04 20:28:11Client at addr says: !Animal
+2024-12-04 20:28:21Connection from client at: ('127.0.0.1', 42746) with chosen name: 
+2024-12-04 20:28:21Current connections: 2 from IP 127.0.0.1
+2024-12-04 20:28:22Client at addr says: !hi
+2024-12-04 20:28:25Client at addr says: !Animal
+2024-12-04 20:30:13Connection from client at: ('127.0.0.1', 43772) with chosen name: 
+2024-12-04 20:30:13Current connections: 1 from IP 127.0.0.1
+2024-12-04 20:30:16Client at addr says: !jo 
+2024-12-04 20:30:22Client at addr says: !Animal
+2024-12-04 20:30:26Connection from client at: ('127.0.0.1', 51650) with chosen name: 
+2024-12-04 20:30:26Current connections: 2 from IP 127.0.0.1
+2024-12-04 20:30:28Client at addr says: !hi
+2024-12-04 20:30:29Client at addr says: !Animal
