@@ -224,7 +224,7 @@ def serve_client(conn, addr):
                                     send(conn, splash.wrong())
                                     break
             send(conn, splash.scoreBoard(players))
-            if i > 6:
+            if int(i) > 6:
                 break
         
     send(conn, splash.winCondition(lobby[selection]))

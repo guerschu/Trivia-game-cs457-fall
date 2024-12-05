@@ -538,3 +538,55 @@
 2024-12-04 21:34:14Al : got question 6
 2024-12-04 21:34:15Al Answered: 6 with C
 2024-12-04 21:34:15Al Got It Wrong! Womp Womp
+2024-12-04 21:46:48Connection from client at: ('127.0.0.1', 60974) with chosen name: 
+2024-12-04 21:46:48Current connections: 1 from IP 127.0.0.1
+2024-12-04 21:46:52Connection from client at: ('127.0.0.1', 60818) with chosen name: 
+2024-12-04 21:46:52Current connections: 2 from IP 127.0.0.1
+2024-12-04 21:46:56Client at addr says: !a
+2024-12-04 21:46:58a Selected Category Animal
+2024-12-04 21:46:58Client at addr says: !Animal
+2024-12-04 21:47:02Client at addr says: !d
+2024-12-04 21:47:03d Selected Category Animal
+2024-12-04 21:47:03Client at addr says: !Animal
+2024-12-04 21:47:03a : got question 1
+2024-12-04 21:47:03d : got question 1
+2024-12-04 21:47:05a Answered: 1 with A
+2024-12-04 21:47:05a Got It Correct!
+2024-12-04 21:47:05a : got question 2
+2024-12-04 21:47:07d Answered: 1 with A
+2024-12-04 21:47:07d Got It Correct!
+2024-12-04 21:47:07d : got question 2
+2024-12-04 21:47:09d Answered: 2 with A
+2024-12-04 21:47:09d Got It Wrong! Womp Womp
+2024-12-04 21:47:09d : got question 3
+2024-12-04 21:47:11a Answered: 2 with A
+2024-12-04 21:47:11a Got It Wrong! Womp Womp
+2024-12-04 21:47:11a : got question 3
+2024-12-04 21:47:12a Answered: 3 with A
+2024-12-04 21:47:12a Got It Correct!
+2024-12-04 21:47:12a : got question 4
+2024-12-04 21:47:13d Answered: 3 with A
+2024-12-04 21:47:13d Got It Correct!
+2024-12-04 21:47:13d : got question 4
+2024-12-04 21:47:15a Answered: 4 with A
+2024-12-04 21:47:15a Got It Correct!
+2024-12-04 21:47:15a : got question 5
+2024-12-04 21:47:19d Answered: 4 with A
+2024-12-04 21:47:19d Got It Correct!
+2024-12-04 21:47:19d : got question 5
+2024-12-04 21:47:20d Answered: 5 with A
+2024-12-04 21:47:20d Got It Wrong! Womp Womp
+2024-12-04 21:47:20d : got question 6
+2024-12-04 21:47:23a Answered: 5 with A
+2024-12-04 21:47:23a Got It Wrong! Womp Womp
+2024-12-04 21:47:23a : got question 6
+2024-12-04 21:47:25a Answered: 6 with A
+2024-12-04 21:47:25a Got It Wrong! Womp Womp
+2024-12-04 21:47:25a : got question 1
+2024-12-04 21:47:27d Answered: 6 with A
+2024-12-04 21:47:27d Got It Wrong! Womp Womp
+2024-12-04 21:47:27d : got question 1
+2024-12-04 21:47:38d Answered: 1 with ISCON
+2024-12-04 21:47:38Current connections: 2
+2024-12-04 21:47:39a Answered: 1 with ISCON
+2024-12-04 21:47:39Current connections: 1
