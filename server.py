@@ -111,6 +111,13 @@ def remove_player(name):
         del lobby[players[name]["SEL"]][name]
     del players[name]
 
+def create_user(conn, message):
+    usrn = message[1:]
+    #print(usrn)
+    players[usrn] = {"IP":addr[0],"GP":0,"SEL":"", "Done": False, "Name": usrn}
+    log.logIt(f"User {usrn} added to current players")
+    send(conn, splash.youChose(message[1:]))
+
 def send(conn, message):
     message = message.encode('utf-8')
     msg_len = len(message)
@@ -137,11 +144,8 @@ def serve_client(conn, addr):
                 break
             if message[0] == "!":
                 if setup == 0:
-                    usrn = message[1:]
-                    #print(usrn)
-                    players[usrn] = {"IP":addr[0],"GP":0,"SEL":"", "Done": False, "Name": usrn}
+                    create_user(conn, message)
                     setup += 1
-                    send(conn, splash.youChose(message[1:]))
                 elif setup == 1:
                     if validate(conn, message[1:]):
                         players[usrn].update({"SEL": (message[1:].lower())})
