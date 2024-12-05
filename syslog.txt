@@ -485,3 +485,56 @@
 2024-12-04 20:30:26Current connections: 2 from IP 127.0.0.1
 2024-12-04 20:30:28Client at addr says: !hi
 2024-12-04 20:30:29Client at addr says: !Animal
+2024-12-04 21:29:53Connection from client at: ('127.0.0.1', 35638) with chosen name: 
+2024-12-04 21:29:53Current connections: 1 from IP 127.0.0.1
+2024-12-04 21:29:57Client at addr says: !$
+2024-12-04 21:30:04$ Selected Category Animal
+2024-12-04 21:30:04Client at addr says: !Animal
+2024-12-04 21:32:17Connection from client at: ('127.0.0.1', 39436) with chosen name: 
+2024-12-04 21:32:17Current connections: 2 from IP 127.0.0.1
+2024-12-04 21:32:19Client at addr says: !L
+2024-12-04 21:32:21L Selected Category Animal
+2024-12-04 21:32:21Client at addr says: !Animal
+2024-12-04 21:33:18Connection from client at: ('127.0.0.1', 56092) with chosen name: 
+2024-12-04 21:33:18Current connections: 1 from IP 127.0.0.1
+2024-12-04 21:33:20Connection from client at: ('127.0.0.1', 44916) with chosen name: 
+2024-12-04 21:33:20Current connections: 2 from IP 127.0.0.1
+2024-12-04 21:33:27Client at addr says: !Al
+2024-12-04 21:33:29Al Selected Category Animal
+2024-12-04 21:33:29Client at addr says: !Animal
+2024-12-04 21:33:33Client at addr says: !Ber
+2024-12-04 21:33:35Ber Selected Category Animal
+2024-12-04 21:33:35Client at addr says: !Animal
+2024-12-04 21:33:35Al : got question 1
+2024-12-04 21:33:35Ber : got question 1
+2024-12-04 21:33:40Al Answered: 1 with A
+2024-12-04 21:33:40Al Got It Correct!
+2024-12-04 21:33:40Al : got question 2
+2024-12-04 21:33:42Ber Answered: 1 with A
+2024-12-04 21:33:42Ber Got It Correct!
+2024-12-04 21:33:42Ber : got question 2
+2024-12-04 21:33:50Al Answered: 2 with B
+2024-12-04 21:33:50Al Got It Correct!
+2024-12-04 21:33:50Al : got question 3
+2024-12-04 21:33:53Ber Answered: 2 with B
+2024-12-04 21:33:53Ber Got It Correct!
+2024-12-04 21:33:53Ber : got question 3
+2024-12-04 21:33:55Al Answered: 3 with C
+2024-12-04 21:33:55Al Got It Wrong! Womp Womp
+2024-12-04 21:33:55Al : got question 4
+2024-12-04 21:34:00Ber Answered: 3 with G
+2024-12-04 21:34:00Ber : got question 4
+2024-12-04 21:34:05Ber Answered: 4 with G
+2024-12-04 21:34:05Ber : got question 5
+2024-12-04 21:34:08Ber Answered: 5 with A
+2024-12-04 21:34:08Ber Got It Wrong! Womp Womp
+2024-12-04 21:34:08Ber : got question 6
+2024-12-04 21:34:09Ber Answered: 6 with A
+2024-12-04 21:34:09Ber Got It Wrong! Womp Womp
+2024-12-04 21:34:12Al Answered: 4 with C
+2024-12-04 21:34:12Al Got It Wrong! Womp Womp
+2024-12-04 21:34:12Al : got question 5
+2024-12-04 21:34:14Al Answered: 5 with D
+2024-12-04 21:34:14Al : got question 6
+2024-12-04 21:34:15Al Answered: 6 with C
+2024-12-04 21:34:15Al Got It Wrong! Womp Womp

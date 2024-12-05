@@ -161,7 +161,7 @@ def serve_client(conn, addr):
                 try:
                     if player_name == usrn:
                         print(f"{player_name} : got question {i}")
-                        log.logit(f"{player_name} : got question {i}")
+                        log.logIt(f"{player_name} : got question {i}")
                 except KeyError:
                     print(f"KeyError: 'Name' not found for user {usrn}")
                     send(conn, "An error occurred. Please try again.")
