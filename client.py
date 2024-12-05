@@ -1,8 +1,7 @@
 import sys
 import socket
-import time
 import splash
-import libclient
+import custom_logger as log
 
 # the main part of the program we will be using
 
@@ -17,6 +16,7 @@ splash.home()
 
 host, port = sys.argv[2], int(sys.argv[4])
 print(f"Attempting to connect to {host} on port: {port}...")
+log.logIt(f"Attempting to connect to {host} on port: {port}...")
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 client.connect((host, port))
 #client.setblocking(False)
@@ -42,12 +42,15 @@ def start():
                     break
                 if message[0] == "!":
                     print(f"Server: {message}")
+                    log.logIt(f"Client got message from Server: {message}")
                     send("!"+input("Response: "))
                 print(f"Server: {message}")
+                log.logIt(f"Client got another message from Server: {message}")
                 #if meeting proper conditons about game ask for user input to send
     except KeyboardInterrupt:
         print("You interrupted your game! Disconnecting...")
         send("DISCON")
+        log.logIt("Client Disconnected from KeyBoard")
         client.close()
 
 start()
