@@ -3,6 +3,7 @@ import sys
 import custom_logger as log
 import threading
 import splash
+import time
 
 players = {
     "admin": {
@@ -20,6 +21,7 @@ lobby = {
         "IP":"0.0.0.0",
         "GP":-1,
         "SEL":"giraffe",
+        "Done": False,
         "Name": "admin"
         }
     },
@@ -28,6 +30,7 @@ lobby = {
         "IP":"0.0.0.0",
         "GP":-1,
         "SEL":"giraffe",
+        "Done": False,
         "Name": "admin"
         }
     },
@@ -36,6 +39,7 @@ lobby = {
         "IP":"0.0.0.0",
         "GP":-1,
         "SEL":"giraffe",
+        "Done": False,
         "Name": "admin"
         }
     }
@@ -81,9 +85,6 @@ server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 validOptions = ["animal","exit","history","location"]
 
 def validate(conn, user_input):
-    if user_input == "exit" or user_input == 'x':
-        send(conn, "Disconnecting you Goodbye...")
-        return False
     if user_input.lower() in validOptions:
         send(conn, splash.youChose(user_input))
         return True
@@ -117,7 +118,7 @@ def create_user(conn, addr, usrn):
     log.logIt(f"User {usrn} added to current players")
     return usrn
 
-def send_recieve(conn, addr, sent_list):
+def send_recieve(conn, sent_list):
     responses = []
     for i in sent_list:
         send(conn, i)
@@ -127,7 +128,7 @@ def send_recieve(conn, addr, sent_list):
             message = conn.recv(msg_len).decode('utf-8')
             if message == "DISCON":
                 break
-             #gracefully handle exit of client
+                #gracefully handle exit of client
             elif message[0] == "!":
                 responses.append(message[1:])
     return responses
@@ -151,10 +152,10 @@ def send(conn, message):
 def serve_client(conn, addr):
     log.logIt(f"Connection from client at: {addr} with chosen name: ")
     need_info = ["!"+splash.userName(),"!"+splash.options()]
-    usrn = send_recieve(conn, addr, [need_info[0]])[0]
+    usrn = send_recieve(conn, [need_info[0]])[0]
     send(conn, splash.youChose(usrn))
     create_user(conn, addr, usrn)
-    player_into_lobby(conn, addr, usrn, send_recieve(conn, addr, [need_info[1]])[0])
+    player_into_lobby(conn, addr, usrn, send_recieve(conn, [need_info[1]])[0])
     #print(players)
     selection = players[usrn]["SEL"]
     if serve_client_lobby(conn, addr, usrn, selection):
@@ -167,84 +168,40 @@ def serve_client(conn, addr):
         remove_player(usrn)
         conn.close()
 
+def validate_answer(ans, conn):
+    if ans not in ["A", "B", "C"]:
+        validate_answer(send_recieve(conn, ["Please make sure your answer is A, B or C"])[0], conn)
+    else:
+        return ans
+
+def check_answer(usrn, ans, selection, map, conn):
+    if Answers[selection][map] == validate_answer(ans, conn):
+        lobby[selection][usrn].update({"GP": lobby[selection][usrn]["GP"] + 1})
+        send(conn, splash.correct())
+    else:
+        send(conn, splash.wrong())
+
+def await_others(selection):
+    start_time = time.time()
+    everyone_done = False
+    while not everyone_done:
+        if (start_time - time.time() >= 10): #incase anyone false behind the game doesnt hang
+            break
+        for player in list(lobby[selection].keys()):
+            everyone_done = players[player]["Done"]
+
 def serve_client_lobby(conn, addr, usrn, selection):
-    send(conn, splash.waiting())
-    while True:
-        if lobby_status(selection):
-            for i, func in Questions[selection].items():
-                player_name = players[usrn]["Name"]
-                try:
-                    if player_name == usrn:
-                        print(f"{player_name} : got question {i}")
-                        log.logIt(f"{player_name} : got question {i}")
-                except KeyError:
-                    print(f"KeyError: 'Name' not found for user {usrn}")
-                    send(conn, "An error occurred. Please try again.")
-                send(conn, "!" + func())
-                msg_len = conn.recv(64).decode('utf-8')
-                if msg_len:
-                    msg_len = int(msg_len)
-                    message = conn.recv(msg_len).decode('utf-8')
-                    try:
-                        if player_name == usrn:
-                            print(f"{player_name} Answered: {i} with {message[1:]}")
-                            log.logIt(f"{player_name} Answered: {i} with {message[1:]}")
-                    except KeyError as e:
-                        log.logIt(f"KeyError: {e}")
-                        send(conn, "An error occurred. Please try again. Happened with the Lobby accessing a Name")
-                        break
-                    if message == "DISCON":
-                        update_conns()
-                        remove_player(usrn)
-                        break
-                    if message[1:] == Answers[selection][i]:
-                        players[usrn].update({"GP": players[usrn]["GP"] + 1})
-                        print(f"{player_name} Got It Correct!")
-                        log.logIt(f"{player_name} Got It Correct!")
-                        send(conn, splash.correct())
-                    elif message[1:] in ['A', 'B', 'C']:
-                        print(f"{player_name} Got It Wrong! Womp Womp")
-                        log.logIt(f"{player_name} Got It Wrong! Womp Womp")
-                        send(conn, splash.wrong())
-                    else:
-                        incorrecInput = False
-                        while incorrecInput:
-                            send(conn, "Incorrect Input Type")
-                            send(conn, "!"+func())
-                            msg_len = conn.recv(64).decode('utf-8')
-                            if msg_len:
-                                msg_len = int(msg_len)
-                                message = conn.recv(msg_len).decode('utf-8')
-                                try:
-                                    if player_name == usrn:
-                                        print(f"{player_name} Answered: {i} with {message[1:]}")
-                                        log.logIt(f"{player_name} Answered: {i} with {message[1:]}")
-                                except KeyError as e:
-                                    log.logIt(f"KeyError: {e}")
-                                    send(conn, "An error occurred. Please try again. Happened with the Lobby accessing a Name")
-                                    break
-                                if message == "DISCON":
-                                    update_conns()
-                                    remove_player(usrn)
-                                    break
-                                if message[1:] == Answers[selection][i]:
-                                    players[usrn].update({"GP": players[usrn]["GP"] + 1})
-                                    print(f"{player_name} Got It Correct!")
-                                    log.logIt(f"{player_name} Got It Correct!")
-                                    send(conn, splash.correct())
-                                    break
-                                elif message[1:] in ['A', 'B', 'C']:
-                                    print(f"{player_name} Got It Wrong! Womp Womp")
-                                    log.logIt(f"{player_name} Got It Wrong! Womp Womp")
-                                    send(conn, splash.wrong())
-                                    break
-            send(conn, splash.scoreBoard(players))
-            if int(i) > 6:
-                break
+    for i, func in Questions[selection].items():
+        send(conn, func())#Give user a question
+        ans = send_recieve(conn, [i])[0] #gather answer
+        await_others(selection) #Wait for all users in lobby to answer to move on, if this player hasn't answered -> idk what to do with this special case
+        check_answer(usrn, ans, selection, i, conn) #Check answer
+        send(conn, splash.scoreBoard(lobby[selection])) #Print scoreboard
     send(conn, splash.winCondition(lobby[selection]))
-    #TODO Play again?
-    return True
-    
+    #reset all users in lobby flag
+    #repeat for all questions
+    return False
+
 
 def run_server():
     try:
