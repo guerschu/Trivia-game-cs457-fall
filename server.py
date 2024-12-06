@@ -111,15 +111,34 @@ def remove_player(name):
         del lobby[players[name]["SEL"]][name]
     del players[name]
 
-def create_user(conn, addr, message):
-    usrn = message[1:]
+def create_user(conn, addr, usrn):
     #print(usrn)
     players[usrn] = {"IP":addr[0],"GP":0,"SEL":"", "Done": False, "Name": usrn}
     log.logIt(f"User {usrn} added to current players")
     return usrn
 
 def send_recieve(conn, addr, sent_list):
-    pass
+    responses = []
+    for i in sent_list:
+        send(conn, i)
+        msg_len = conn.recv(64).decode('utf-8')
+        if(msg_len):
+            msg_len = int(msg_len)
+            message = conn.recv(msg_len).decode('utf-8')
+            if message == "DISCON":
+                break
+             #gracefully handle exit of client
+            elif message[0] == "!":
+                responses.append(message[1:])
+    return responses
+
+def player_into_lobby(conn, addr, usrn, selection):
+    if validate(conn, selection):
+        players[usrn].update({"SEL": (selection.lower())})
+        print(players[usrn]["Name"] + " Selected Category "+ selection)
+        log.logIt(players[usrn]["Name"] + " Selected Category "+ selection)
+        lobby[players[usrn]["SEL"]][usrn] = players[usrn]
+        update_lobby(players[usrn]["SEL"])
 
 def send(conn, message):
     message = message.encode('utf-8')
@@ -131,38 +150,16 @@ def send(conn, message):
 
 def serve_client(conn, addr):
     log.logIt(f"Connection from client at: {addr} with chosen name: ")
-    send(conn,"!"+splash.userName())
-    send(conn,"!"+splash.options())
-    usrn = ""
-    setup = 0 # 0 means needs username, 1 means needs selection, 2 means all set up
-    inlobby = False
-    while not inlobby:
-        msg_len = conn.recv(64).decode('utf-8')
-        if msg_len:
-            msg_len = int(msg_len)
-            message = conn.recv(msg_len).decode('utf-8')
-            if message == "DISCON":
-                update_conns()
-                remove_player(usrn)
-                break
-            if message[0] == "!":
-                if setup == 0:
-                    usrn = create_user(conn, addr, message)
-                    send(conn, splash.youChose(usrn))
-                    setup += 1
-                elif setup == 1:
-                    if validate(conn, message[1:]):
-                        players[usrn].update({"SEL": (message[1:].lower())})
-                        print(players[usrn]["Name"] + " Selected Category "+ message[1:])
-                        log.logIt(players[usrn]["Name"] + " Selected Category "+ message[1:])
-                        lobby[players[usrn]["SEL"]][usrn] = players[usrn]
-                        update_lobby(players[usrn]["SEL"])
-                        inlobby = True
-            log.logIt(f"Client at addr says: {message}")
+    need_info = ["!"+splash.userName(),"!"+splash.options()]
+    usrn = send_recieve(conn, addr, [need_info[0]])[0]
+    send(conn, splash.youChose(usrn))
+    create_user(conn, addr, usrn)
+    player_into_lobby(conn, addr, usrn, send_recieve(conn, addr, [need_info[1]])[0])
     #print(players)
     selection = players[usrn]["SEL"]
     if serve_client_lobby(conn, addr, usrn, selection):
         #select lobby/options operation
+        pass
     else:
         #disconnect user operations
         send(conn, splash.thanksForPlaying())
