@@ -84,13 +84,6 @@ server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 validOptions = ["animal","exit","history","location"]
 
-def validate(conn, user_input):
-    if user_input.lower() in validOptions:
-        send(conn, splash.youChose(user_input))
-        return True
-    else:
-        send(conn, "!|  Choose a valid option and try again   |")
-        return False
 
 def update_conns():
     strcur = f"Current connections: {threading.active_count() - 1}"
@@ -133,13 +126,22 @@ def send_recieve(conn, sent_list):
                 responses.append(message[1:])
     return responses
 
+def validate(conn, user_input):
+    if user_input != "" and user_input.lower() in validOptions:
+        send(conn, splash.youChose(user_input))
+        return user_input
+    else:
+        send(conn, "!|  Choose a valid option and try again   |")
+        return validate(conn, send_recieve(conn, ["!"+splash.options()])[0])
+
 def player_into_lobby(conn, addr, usrn, selection):
-    if validate(conn, selection):
-        players[usrn].update({"SEL": (selection.lower())})
-        print(players[usrn]["Name"] + " Selected Category "+ selection)
-        log.logIt(players[usrn]["Name"] + " Selected Category "+ selection)
-        lobby[players[usrn]["SEL"]][usrn] = players[usrn]
-        update_lobby(players[usrn]["SEL"])
+    selection = validate(conn, selection)
+    print("Here?")
+    players[usrn].update({"SEL": (selection.lower())})
+    print(players[usrn]["Name"] + " Selected Category "+ selection)
+    log.logIt(players[usrn]["Name"] + " Selected Category "+ selection)
+    lobby[players[usrn]["SEL"]][usrn] = players[usrn]
+    update_lobby(players[usrn]["SEL"])
 
 def send(conn, message):
     message = message.encode('utf-8')
@@ -191,12 +193,21 @@ def await_others(selection):
             everyone_done = players[player]["Done"]
 
 def serve_client_lobby(conn, addr, usrn, selection):
+    print("Player is playing")
     for i, func in Questions[selection].items():
+        print(i)
         send(conn, func())#Give user a question
-        ans = send_recieve(conn, [i])[0] #gather answer
+        print("Sent question")
+        ans = send_recieve(conn, ["!"+i])[0] #gather answer
+        lobby[selection][usrn].update({"Done": True})
+        print("Gathered answer")
         await_others(selection) #Wait for all users in lobby to answer to move on, if this player hasn't answered -> idk what to do with this special case
+        print("done awaiting")
         check_answer(usrn, ans, selection, i, conn) #Check answer
+        print("checked answer")
         send(conn, splash.scoreBoard(lobby[selection])) #Print scoreboard
+        print("Sent scores")
+        lobby[selection][usrn].update({"Done": False})
     send(conn, splash.winCondition(lobby[selection]))
     #reset all users in lobby flag
     #repeat for all questions

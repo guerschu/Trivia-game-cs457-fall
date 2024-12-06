@@ -782,3 +782,1640 @@
 2024-12-06 14:26:23User a added to current players
 2024-12-06 14:26:45Client Disconnected from KeyBoard
 2024-12-06 14:26:45Current connections: 1
+2024-12-06 15:40:41Attempting to connect to 127.0.0.1 on port: 50505...
+2024-12-06 15:40:41Connection from client at: ('127.0.0.1', 56148) with chosen name: 
+2024-12-06 15:40:41Current connections: 1 from IP 127.0.0.1
+2024-12-06 15:40:41Client got message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 15:40:56Attempting to connect to 127.0.0.1 on port: 50505...
+2024-12-06 15:40:56Connection from client at: ('127.0.0.1', 33330) with chosen name: 
+2024-12-06 15:40:56Current connections: 2 from IP 127.0.0.1
+2024-12-06 15:40:56Client got message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 15:41:00Client got another message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 15:41:00User jo added to current players
+2024-12-06 15:41:00Client got another message from Server: 
+    __________________________________
+    |Great you chose: jo          |
+    |________________________________|
+    
+2024-12-06 15:41:00Client got message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 15:41:01Client got another message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 15:41:01jo Selected Category Animal
+2024-12-06 15:41:01Client got another message from Server: 
+    __________________________________
+    |Great you chose: Animal          |
+    |________________________________|
+    
+2024-12-06 15:41:01Client got another message from Server: 
+    _____________________________________
+    |  What Mammal has the Thickest Fur? |
+    |           A: Sea Otter            |
+    |           B: Moose                |
+    |           C: Bear                 |
+    |___________________________________|
+    
+2024-12-06 15:41:01Client got another message from Server: 1
+2024-12-06 15:41:34Client got another message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 15:41:34User jo added to current players
+2024-12-06 15:41:34Client got another message from Server: 
+    __________________________________
+    |Great you chose: jo          |
+    |________________________________|
+    
+2024-12-06 15:41:34Client got message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 15:41:37Client got another message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 15:41:37Client got another message from Server: 
+    __________________________________
+    |Great you chose: Animal          |
+    |________________________________|
+    
+2024-12-06 15:41:37jo Selected Category Animal
+2024-12-06 15:41:37Client got another message from Server: 
+    _____________________________________
+    |  What Mammal has the Thickest Fur? |
+    |           A: Sea Otter            |
+    |           B: Moose                |
+    |           C: Bear                 |
+    |___________________________________|
+    
+2024-12-06 15:41:37Client got another message from Server: 1
+2024-12-06 15:43:25Client Disconnected from KeyBoard
+2024-12-06 15:43:27Client Disconnected from KeyBoard
+2024-12-06 15:45:27Attempting to connect to 127.0.0.1 on port: 50505...
+2024-12-06 15:45:27Connection from client at: ('127.0.0.1', 59398) with chosen name: 
+2024-12-06 15:45:27Current connections: 1 from IP 127.0.0.1
+2024-12-06 15:45:27Client got message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 15:45:29Attempting to connect to 127.0.0.1 on port: 50505...
+2024-12-06 15:45:29Connection from client at: ('127.0.0.1', 59414) with chosen name: 
+2024-12-06 15:45:29Current connections: 2 from IP 127.0.0.1
+2024-12-06 15:45:29Client got message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 15:45:31Client got another message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 15:45:31User A added to current players
+2024-12-06 15:45:31Client got another message from Server: 
+    __________________________________
+    |Great you chose: A          |
+    |________________________________|
+    
+2024-12-06 15:45:31Client got message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 15:45:33Client got another message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 15:45:33Client got another message from Server: 
+    __________________________________
+    |Great you chose: Animal          |
+    |________________________________|
+    
+2024-12-06 15:45:33A Selected Category Animal
+2024-12-06 15:45:33Client got another message from Server: 
+    _____________________________________
+    |  What Mammal has the Thickest Fur? |
+    |           A: Sea Otter            |
+    |           B: Moose                |
+    |           C: Bear                 |
+    |___________________________________|
+    
+2024-12-06 15:45:33Client got another message from Server: 1
+2024-12-06 15:45:36Client got another message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 15:45:36User jo added to current players
+2024-12-06 15:45:36Client got another message from Server: 
+    __________________________________
+    |Great you chose: jo          |
+    |________________________________|
+    
+2024-12-06 15:45:36Client got message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 15:45:38Client got another message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 15:45:38jo Selected Category Animal
+2024-12-06 15:45:38Client got another message from Server: 
+    __________________________________
+    |Great you chose: Animal          |
+    |________________________________|
+    
+2024-12-06 15:45:38Client got another message from Server: 
+    _____________________________________
+    |  What Mammal has the Thickest Fur? |
+    |           A: Sea Otter            |
+    |           B: Moose                |
+    |           C: Bear                 |
+    |___________________________________|
+    
+2024-12-06 15:45:38Client got another message from Server: 1
+2024-12-06 15:45:44Client Disconnected from KeyBoard
+2024-12-06 15:45:45Client Disconnected from KeyBoard
+2024-12-06 15:47:23Attempting to connect to 127.0.0.1 on port: 50505...
+2024-12-06 15:47:23Connection from client at: ('127.0.0.1', 54454) with chosen name: 
+2024-12-06 15:47:23Current connections: 1 from IP 127.0.0.1
+2024-12-06 15:47:23Client got message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 15:47:28Attempting to connect to 127.0.0.1 on port: 50505...
+2024-12-06 15:47:28Connection from client at: ('127.0.0.1', 54462) with chosen name: 
+2024-12-06 15:47:28Current connections: 2 from IP 127.0.0.1
+2024-12-06 15:47:28Client got message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 15:47:30Client got another message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 15:47:30User jo added to current players
+2024-12-06 15:47:30Client got another message from Server: 
+    __________________________________
+    |Great you chose: jo          |
+    |________________________________|
+    
+2024-12-06 15:47:30Client got message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 15:47:33Client got another message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 15:47:33Client got another message from Server: 
+    __________________________________
+    |Great you chose: Animal          |
+    |________________________________|
+    
+2024-12-06 15:47:33jo Selected Category Animal
+2024-12-06 15:47:33Client got another message from Server: 
+    _____________________________________
+    |  What Mammal has the Thickest Fur? |
+    |           A: Sea Otter            |
+    |           B: Moose                |
+    |           C: Bear                 |
+    |___________________________________|
+    
+2024-12-06 15:47:33Client got another message from Server: 1
+2024-12-06 15:47:40Client got another message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 15:47:40User joo added to current players
+2024-12-06 15:47:40Client got another message from Server: 
+    __________________________________
+    |Great you chose: joo          |
+    |________________________________|
+    
+2024-12-06 15:47:40Client got message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 15:47:43Client got another message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 15:47:43Client got another message from Server: 
+    __________________________________
+    |Great you chose: Animal          |
+    |________________________________|
+    
+2024-12-06 15:47:43joo Selected Category Animal
+2024-12-06 15:47:43Client got another message from Server: 
+    _____________________________________
+    |  What Mammal has the Thickest Fur? |
+    |           A: Sea Otter            |
+    |           B: Moose                |
+    |           C: Bear                 |
+    |___________________________________|
+    
+2024-12-06 15:47:43Client got another message from Server: 1
+2024-12-06 15:48:34Client Disconnected from KeyBoard
+2024-12-06 15:48:35Client Disconnected from KeyBoard
+2024-12-06 15:48:39Attempting to connect to 127.0.0.1 on port: 50505...
+2024-12-06 15:48:39Connection from client at: ('127.0.0.1', 42356) with chosen name: 
+2024-12-06 15:48:39Current connections: 1 from IP 127.0.0.1
+2024-12-06 15:48:39Client got message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 15:48:41Attempting to connect to 127.0.0.1 on port: 50505...
+2024-12-06 15:48:41Connection from client at: ('127.0.0.1', 54456) with chosen name: 
+2024-12-06 15:48:41Current connections: 2 from IP 127.0.0.1
+2024-12-06 15:48:41Client got message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 15:48:42Client got another message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 15:48:42User jo added to current players
+2024-12-06 15:48:42Client got another message from Server: 
+    __________________________________
+    |Great you chose: jo          |
+    |________________________________|
+    
+2024-12-06 15:48:42Client got message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 15:48:44Client got another message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 15:48:44Client got another message from Server: 
+    __________________________________
+    |Great you chose: Animal          |
+    |________________________________|
+    
+2024-12-06 15:48:44jo Selected Category Animal
+2024-12-06 15:48:44Client got another message from Server: 
+    _____________________________________
+    |  What Mammal has the Thickest Fur? |
+    |           A: Sea Otter            |
+    |           B: Moose                |
+    |           C: Bear                 |
+    |___________________________________|
+    
+2024-12-06 15:48:44Client got another message from Server: 1
+2024-12-06 15:48:46Client got another message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 15:48:46User d added to current players
+2024-12-06 15:48:46Client got another message from Server: 
+    __________________________________
+    |Great you chose: d          |
+    |________________________________|
+    
+2024-12-06 15:48:46Client got message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 15:48:48Client got another message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 15:48:48d Selected Category Animal
+2024-12-06 15:48:48Client got another message from Server: 
+    __________________________________
+    |Great you chose: Animal          |
+    |________________________________|
+    
+2024-12-06 15:48:48Client got another message from Server: 
+    _____________________________________
+    |  What Mammal has the Thickest Fur? |
+    |           A: Sea Otter            |
+    |           B: Moose                |
+    |           C: Bear                 |
+    |___________________________________|
+    
+2024-12-06 15:48:48Client got another message from Server: 1
+2024-12-06 15:49:02Client Disconnected from KeyBoard
+2024-12-06 15:49:03Client Disconnected from KeyBoard
+2024-12-06 15:49:56Attempting to connect to 127.0.0.1 on port: 50505...
+2024-12-06 15:49:56Connection from client at: ('127.0.0.1', 51410) with chosen name: 
+2024-12-06 15:49:56Current connections: 1 from IP 127.0.0.1
+2024-12-06 15:49:56Client got message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 15:49:57Attempting to connect to 127.0.0.1 on port: 50505...
+2024-12-06 15:49:57Connection from client at: ('127.0.0.1', 51422) with chosen name: 
+2024-12-06 15:49:57Current connections: 2 from IP 127.0.0.1
+2024-12-06 15:49:57Client got message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 15:50:02Client got another message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 15:50:02User jo added to current players
+2024-12-06 15:50:02Client got another message from Server: 
+    __________________________________
+    |Great you chose: jo          |
+    |________________________________|
+    
+2024-12-06 15:50:02Client got message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 15:50:03Client got another message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 15:50:03Client got another message from Server: 
+    __________________________________
+    |Great you chose: Animal          |
+    |________________________________|
+    
+2024-12-06 15:50:03jo Selected Category Animal
+2024-12-06 15:50:03Client got another message from Server: 
+    _____________________________________
+    |  What Mammal has the Thickest Fur? |
+    |           A: Sea Otter            |
+    |           B: Moose                |
+    |           C: Bear                 |
+    |___________________________________|
+    
+2024-12-06 15:50:03Client got message from Server: !1
+2024-12-06 15:50:06Client got another message from Server: !1
+2024-12-06 15:50:06Client got another message from Server: 
+    __________________________________
+    |             Correct!           |
+    |________________________________|
+    
+2024-12-06 15:50:06Client got another message from Server: ______________________SCOREBOARD___________________
+jo: 1
+___________________________________________________
+
+2024-12-06 15:50:06Client got another message from Server: 
+    _____________________________________________
+    |  What Animal Has The Highest Blood Pressue? |
+    |               A: Rabbits                   |
+    |               B: Giraffe                   |
+    |               C: Cows                      |
+    |____________________________________________|
+    
+2024-12-06 15:50:06Client got message from Server: !2
+2024-12-06 15:50:13Client Disconnected from KeyBoard
+2024-12-06 15:50:14Client Disconnected from KeyBoard
+2024-12-06 15:50:24Attempting to connect to 127.0.0.1 on port: 50505...
+2024-12-06 15:50:24Connection from client at: ('127.0.0.1', 51982) with chosen name: 
+2024-12-06 15:50:24Current connections: 1 from IP 127.0.0.1
+2024-12-06 15:50:24Client got message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 15:50:27Attempting to connect to 127.0.0.1 on port: 50505...
+2024-12-06 15:50:27Connection from client at: ('127.0.0.1', 51994) with chosen name: 
+2024-12-06 15:50:27Current connections: 2 from IP 127.0.0.1
+2024-12-06 15:50:27Client got message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 15:50:30Client got another message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 15:50:30User jo added to current players
+2024-12-06 15:50:30Client got another message from Server: 
+    __________________________________
+    |Great you chose: jo          |
+    |________________________________|
+    
+2024-12-06 15:50:30Client got message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 15:50:35Client got another message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 15:50:35jo Selected Category Animal
+2024-12-06 15:50:35Client got another message from Server: 
+    __________________________________
+    |Great you chose: Animal          |
+    |________________________________|
+    
+2024-12-06 15:50:35Client got another message from Server: 
+    _____________________________________
+    |  What Mammal has the Thickest Fur? |
+    |           A: Sea Otter            |
+    |           B: Moose                |
+    |           C: Bear                 |
+    |___________________________________|
+    
+2024-12-06 15:50:35Client got message from Server: !1
+2024-12-06 15:50:38Client got another message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 15:50:38User jo added to current players
+2024-12-06 15:50:38Client got another message from Server: 
+    __________________________________
+    |Great you chose: jo          |
+    |________________________________|
+    
+2024-12-06 15:50:38Client got message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 15:50:40Client got another message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 15:50:40Client got another message from Server: 
+    __________________________________
+    |Great you chose: Animal          |
+    |________________________________|
+    
+2024-12-06 15:50:40jo Selected Category Animal
+2024-12-06 15:50:40Client got another message from Server: 
+    _____________________________________
+    |  What Mammal has the Thickest Fur? |
+    |           A: Sea Otter            |
+    |           B: Moose                |
+    |           C: Bear                 |
+    |___________________________________|
+    
+2024-12-06 15:50:40Client got message from Server: !1
+2024-12-06 15:50:41Client got another message from Server: !1
+2024-12-06 15:50:43Client got another message from Server: !1
+2024-12-06 15:52:56Client Disconnected from KeyBoard
+2024-12-06 15:52:56Client Disconnected from KeyBoard
+2024-12-06 15:54:24Attempting to connect to 127.0.0.1 on port: 50505...
+2024-12-06 15:54:24Connection from client at: ('127.0.0.1', 34490) with chosen name: 
+2024-12-06 15:54:24Current connections: 1 from IP 127.0.0.1
+2024-12-06 15:54:24Client got message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 15:54:26Attempting to connect to 127.0.0.1 on port: 50505...
+2024-12-06 15:54:26Connection from client at: ('127.0.0.1', 34496) with chosen name: 
+2024-12-06 15:54:26Current connections: 2 from IP 127.0.0.1
+2024-12-06 15:54:26Client got message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 15:54:28Client got another message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 15:54:28User jo added to current players
+2024-12-06 15:54:28Client got another message from Server: 
+    __________________________________
+    |Great you chose: jo          |
+    |________________________________|
+    
+2024-12-06 15:54:28Client got message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 15:54:30Client got another message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 15:54:31jo Selected Category Animal
+2024-12-06 15:54:31Client got another message from Server: 
+    __________________________________
+    |Great you chose: Animal          |
+    |________________________________|
+    
+2024-12-06 15:54:31Client got another message from Server: 
+    _____________________________________
+    |  What Mammal has the Thickest Fur? |
+    |           A: Sea Otter            |
+    |           B: Moose                |
+    |           C: Bear                 |
+    |___________________________________|
+    
+2024-12-06 15:54:31Client got message from Server: !1
+2024-12-06 15:54:34Client got another message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 15:54:34User A added to current players
+2024-12-06 15:54:34Client got another message from Server: 
+    __________________________________
+    |Great you chose: A          |
+    |________________________________|
+    
+2024-12-06 15:54:34Client got message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 15:54:36Client got another message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 15:54:36Client got another message from Server: 
+    __________________________________
+    |Great you chose: Animal          |
+    |________________________________|
+    
+2024-12-06 15:54:36A Selected Category Animal
+2024-12-06 15:54:36Client got another message from Server: 
+    _____________________________________
+    |  What Mammal has the Thickest Fur? |
+    |           A: Sea Otter            |
+    |           B: Moose                |
+    |           C: Bear                 |
+    |___________________________________|
+    
+2024-12-06 15:54:36Client got message from Server: !1
+2024-12-06 15:54:38Client got another message from Server: !1
+2024-12-06 15:54:44Client Disconnected from KeyBoard
+2024-12-06 15:56:58Attempting to connect to 127.0.0.1 on port: 50505...
+2024-12-06 15:56:58Connection from client at: ('127.0.0.1', 51666) with chosen name: 
+2024-12-06 15:56:58Current connections: 1 from IP 127.0.0.1
+2024-12-06 15:56:58Client got message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 15:57:00Attempting to connect to 127.0.0.1 on port: 50505...
+2024-12-06 15:57:00Connection from client at: ('127.0.0.1', 40956) with chosen name: 
+2024-12-06 15:57:00Current connections: 2 from IP 127.0.0.1
+2024-12-06 15:57:00Client got message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 15:57:03Client got another message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 15:57:03User jo added to current players
+2024-12-06 15:57:03Client got another message from Server: 
+    __________________________________
+    |Great you chose: jo          |
+    |________________________________|
+    
+2024-12-06 15:57:03Client got message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 15:57:05Client got another message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 15:57:05Client got another message from Server: 
+    __________________________________
+    |Great you chose: Animal          |
+    |________________________________|
+    
+2024-12-06 15:57:05jo Selected Category Animal
+2024-12-06 15:57:05Client got another message from Server: 
+    _____________________________________
+    |  What Mammal has the Thickest Fur? |
+    |           A: Sea Otter            |
+    |           B: Moose                |
+    |           C: Bear                 |
+    |___________________________________|
+    
+2024-12-06 15:57:05Client got message from Server: !1
+2024-12-06 15:57:07Client got another message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 15:57:07User a added to current players
+2024-12-06 15:57:07Client got another message from Server: 
+    __________________________________
+    |Great you chose: a          |
+    |________________________________|
+    
+2024-12-06 15:57:07Client got message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 15:57:09Client got another message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 15:57:09a Selected Category Animal
+2024-12-06 15:57:09Client got another message from Server: 
+    __________________________________
+    |Great you chose: Animal          |
+    |________________________________|
+    
+2024-12-06 15:57:09Client got another message from Server: 
+    _____________________________________
+    |  What Mammal has the Thickest Fur? |
+    |           A: Sea Otter            |
+    |           B: Moose                |
+    |           C: Bear                 |
+    |___________________________________|
+    
+2024-12-06 15:57:09Client got message from Server: !1
+2024-12-06 15:57:12Client got another message from Server: !1
+2024-12-06 15:57:14Client got another message from Server: !1
+2024-12-06 15:57:14Client got another message from Server: 
+    __________________________________
+    |             Correct!           |
+    |________________________________|
+    
+2024-12-06 15:57:14Client got another message from Server: 
+    __________________________________
+    |             Correct!           |
+    |________________________________|
+    
+2024-12-06 15:57:14Client got another message from Server: ______________________SCOREBOARD___________________
+jo: 0
+a: 1
+___________________________________________________
+
+2024-12-06 15:57:14Client got another message from Server: ______________________SCOREBOARD___________________
+jo: 1
+a: 1
+___________________________________________________
+
+2024-12-06 15:57:30Client Disconnected from KeyBoard
+2024-12-06 15:57:35Attempting to connect to 127.0.0.1 on port: 50505...
+2024-12-06 15:57:35Connection from client at: ('127.0.0.1', 44516) with chosen name: 
+2024-12-06 15:57:35Current connections: 1 from IP 127.0.0.1
+2024-12-06 15:57:35Client got message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 15:57:37Client got another message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 15:57:37User jo added to current players
+2024-12-06 15:57:37Client got another message from Server: 
+    __________________________________
+    |Great you chose: jo          |
+    |________________________________|
+    
+2024-12-06 15:57:37Client got message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 15:57:40Attempting to connect to 127.0.0.1 on port: 50505...
+2024-12-06 15:57:40Connection from client at: ('127.0.0.1', 45036) with chosen name: 
+2024-12-06 15:57:40Current connections: 2 from IP 127.0.0.1
+2024-12-06 15:57:40Client got message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 15:57:44Client got another message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 15:57:44User koo added to current players
+2024-12-06 15:57:44Client got another message from Server: 
+    __________________________________
+    |Great you chose: koo          |
+    |________________________________|
+    
+2024-12-06 15:57:44Client got message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 15:57:46Client got another message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 15:57:46Client got message from Server: !|  Choose a valid option and try again   |
+2024-12-06 15:57:50Client got another message from Server: !|  Choose a valid option and try again   |
+2024-12-06 15:57:52Client Disconnected from KeyBoard
+2024-12-06 15:57:59Client Disconnected from KeyBoard
+2024-12-06 15:59:52Attempting to connect to 127.0.0.1 on port: 50505...
+2024-12-06 15:59:52Connection from client at: ('127.0.0.1', 57750) with chosen name: 
+2024-12-06 15:59:52Current connections: 1 from IP 127.0.0.1
+2024-12-06 15:59:52Client got message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 15:59:54Attempting to connect to 127.0.0.1 on port: 50505...
+2024-12-06 15:59:54Connection from client at: ('127.0.0.1', 57756) with chosen name: 
+2024-12-06 15:59:54Current connections: 2 from IP 127.0.0.1
+2024-12-06 15:59:54Client got message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 15:59:56Client got another message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 15:59:56User jo added to current players
+2024-12-06 15:59:56Client got another message from Server: 
+    __________________________________
+    |Great you chose: jo          |
+    |________________________________|
+    
+2024-12-06 15:59:56Client got message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 16:00:00Client got another message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 16:00:31Attempting to connect to 127.0.0.1 on port: 50505...
+2024-12-06 16:00:31Connection from client at: ('127.0.0.1', 54534) with chosen name: 
+2024-12-06 16:00:31Current connections: 1 from IP 127.0.0.1
+2024-12-06 16:00:31Client got message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 16:00:33Attempting to connect to 127.0.0.1 on port: 50505...
+2024-12-06 16:00:33Connection from client at: ('127.0.0.1', 54548) with chosen name: 
+2024-12-06 16:00:33Current connections: 2 from IP 127.0.0.1
+2024-12-06 16:00:33Client got message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 16:00:35Client got another message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 16:00:35User jo added to current players
+2024-12-06 16:00:35Client got another message from Server: 
+    __________________________________
+    |Great you chose: jo          |
+    |________________________________|
+    
+2024-12-06 16:00:35Client got message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 16:00:37Client got another message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 16:00:37Client got message from Server: !
+2024-12-06 16:00:39Client got another message from Server: !
+2024-12-06 16:00:39Client got another message from Server: |
+2024-12-06 16:01:31Client Disconnected from KeyBoard
+2024-12-06 16:01:31Client Disconnected from KeyBoard
+2024-12-06 16:01:36Attempting to connect to 127.0.0.1 on port: 50505...
+2024-12-06 16:01:36Connection from client at: ('127.0.0.1', 48468) with chosen name: 
+2024-12-06 16:01:36Current connections: 1 from IP 127.0.0.1
+2024-12-06 16:01:36Client got message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 16:01:38Attempting to connect to 127.0.0.1 on port: 50505...
+2024-12-06 16:01:38Connection from client at: ('127.0.0.1', 48482) with chosen name: 
+2024-12-06 16:01:38Current connections: 2 from IP 127.0.0.1
+2024-12-06 16:01:38Client got message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 16:01:39Client got another message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 16:01:39User jo added to current players
+2024-12-06 16:01:39Client got another message from Server: 
+    __________________________________
+    |Great you chose: jo          |
+    |________________________________|
+    
+2024-12-06 16:01:39Client got message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 16:01:41Client got another message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 16:01:41Client got message from Server: !|  Choose a valid option and try again   |
+2024-12-06 16:01:43Client got another message from Server: !|  Choose a valid option and try again   |
+2024-12-06 16:01:43Client got message from Server: !|  Choose a valid option and try again   |
+2024-12-06 16:01:44Client got another message from Server: !|  Choose a valid option and try again   |
+2024-12-06 16:01:44Client got message from Server: !|  Choose a valid option and try again   |
+2024-12-06 16:01:45Client got another message from Server: !|  Choose a valid option and try again   |
+2024-12-06 16:01:45Client got message from Server: !|  Choose a valid option and try again   |
+2024-12-06 16:01:48Client got another message from Server: !|  Choose a valid option and try again   |
+2024-12-06 16:01:48Client got another message from Server: 
+    __________________________________
+    |Great you chose: Animal          |
+    |________________________________|
+    
+2024-12-06 16:02:00Client Disconnected from KeyBoard
+2024-12-06 16:07:54Attempting to connect to 127.0.0.1 on port: 50505...
+2024-12-06 16:07:54Connection from client at: ('127.0.0.1', 59562) with chosen name: 
+2024-12-06 16:07:54Current connections: 1 from IP 127.0.0.1
+2024-12-06 16:07:54Client got message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 16:07:55Client got another message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 16:07:55User jo added to current players
+2024-12-06 16:07:55Client got another message from Server: 
+    __________________________________
+    |Great you chose: jo          |
+    |________________________________|
+    
+2024-12-06 16:07:55Client got message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 16:07:56Client got another message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 16:07:56Client got message from Server: !|  Choose a valid option and try again   |
+2024-12-06 16:07:57Client got another message from Server: !|  Choose a valid option and try again   |
+2024-12-06 16:07:57Client got another message from Server: 
+
+2024-12-06 16:07:58Client got another message from Server:  
+2024-12-06 16:08:20Client Disconnected from KeyBoard
+2024-12-06 16:08:24Attempting to connect to 127.0.0.1 on port: 50505...
+2024-12-06 16:08:24Connection from client at: ('127.0.0.1', 35312) with chosen name: 
+2024-12-06 16:08:24Current connections: 1 from IP 127.0.0.1
+2024-12-06 16:08:24Client got message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 16:08:25Client got another message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 16:08:25User jo added to current players
+2024-12-06 16:08:25Client got another message from Server: 
+    __________________________________
+    |Great you chose: jo          |
+    |________________________________|
+    
+2024-12-06 16:08:25Client got message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 16:08:28Client got another message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 16:08:28Client got message from Server: !|  Choose a valid option and try again   |
+2024-12-06 16:08:29Client got another message from Server: !|  Choose a valid option and try again   |
+2024-12-06 16:08:29Client got another message from Server: 
+
+2024-12-06 16:08:29Client got another message from Server:  
+2024-12-06 16:08:41Client Disconnected from KeyBoard
+2024-12-06 16:09:18Attempting to connect to 127.0.0.1 on port: 50505...
+2024-12-06 16:09:18Connection from client at: ('127.0.0.1', 48984) with chosen name: 
+2024-12-06 16:09:18Current connections: 1 from IP 127.0.0.1
+2024-12-06 16:09:18Client got message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 16:09:20Client got another message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 16:09:20User jo added to current players
+2024-12-06 16:09:20Client got another message from Server: 
+    __________________________________
+    |Great you chose: jo          |
+    |________________________________|
+    
+2024-12-06 16:09:20Client got message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 16:09:21Client got another message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 16:09:21Client got another message from Server: 
+    __________________________________
+    |Great you chose: Aafd          |
+    |________________________________|
+    
+2024-12-06 16:09:21jo Selected Category Aafd
+2024-12-06 16:09:30Client Disconnected from KeyBoard
+2024-12-06 16:09:34Attempting to connect to 127.0.0.1 on port: 50505...
+2024-12-06 16:09:34Connection from client at: ('127.0.0.1', 54554) with chosen name: 
+2024-12-06 16:09:34Current connections: 1 from IP 127.0.0.1
+2024-12-06 16:09:34Client got message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 16:09:38Client got another message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 16:09:38User a added to current players
+2024-12-06 16:09:38Client got another message from Server: 
+    __________________________________
+    |Great you chose: a          |
+    |________________________________|
+    
+2024-12-06 16:09:38Client got message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 16:09:40Client got another message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 16:09:40Client got message from Server: !|  Choose a valid option and try again   |
+2024-12-06 16:09:42Client got another message from Server: !|  Choose a valid option and try again   |
+2024-12-06 16:09:42Client got another message from Server: 
+
+2024-12-06 16:09:42Client got another message from Server:  
+2024-12-06 16:10:13Client Disconnected from KeyBoard
+2024-12-06 16:10:19Attempting to connect to 127.0.0.1 on port: 50505...
+2024-12-06 16:10:19Connection from client at: ('127.0.0.1', 55658) with chosen name: 
+2024-12-06 16:10:19Current connections: 1 from IP 127.0.0.1
+2024-12-06 16:10:19Client got message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 16:10:21Client got another message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 16:10:21User jo added to current players
+2024-12-06 16:10:21Client got another message from Server: 
+    __________________________________
+    |Great you chose: jo          |
+    |________________________________|
+    
+2024-12-06 16:10:21Client got message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 16:10:23Client got another message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 16:10:23Client got message from Server: !|  Choose a valid option and try again   |
+2024-12-06 16:10:24Client got another message from Server: !|  Choose a valid option and try again   |
+2024-12-06 16:10:24Client got message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 16:10:27Client got another message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 16:10:27Client got message from Server: !|  Choose a valid option and try again   |
+2024-12-06 16:10:28Client got another message from Server: !|  Choose a valid option and try again   |
+2024-12-06 16:10:28Client got message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 16:10:29Client got another message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 16:10:29Client got message from Server: !|  Choose a valid option and try again   |
+2024-12-06 16:10:30Client got another message from Server: !|  Choose a valid option and try again   |
+2024-12-06 16:10:30Client got message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 16:10:31Client got another message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 16:10:31Client got message from Server: !|  Choose a valid option and try again   |
+2024-12-06 16:10:33Client got another message from Server: !|  Choose a valid option and try again   |
+2024-12-06 16:10:33Client got message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 16:10:38Client got another message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 16:10:38Client got message from Server: !|  Choose a valid option and try again   |
+2024-12-06 16:10:42Client got another message from Server: !|  Choose a valid option and try again   |
+2024-12-06 16:10:42Client got message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 16:10:44Client got another message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 16:10:44Client got message from Server: !|  Choose a valid option and try again   |
+2024-12-06 16:10:45Client got another message from Server: !|  Choose a valid option and try again   |
+2024-12-06 16:10:45Client got message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 16:10:48Client got another message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 16:10:48Client got message from Server: !|  Choose a valid option and try again   |
+2024-12-06 16:11:01Client Disconnected from KeyBoard
+2024-12-06 16:11:05Attempting to connect to 127.0.0.1 on port: 50505...
+2024-12-06 16:11:05Connection from client at: ('127.0.0.1', 57222) with chosen name: 
+2024-12-06 16:11:05Current connections: 1 from IP 127.0.0.1
+2024-12-06 16:11:05Client got message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 16:11:07Client got another message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 16:11:07User jo added to current players
+2024-12-06 16:11:07Client got another message from Server: 
+    __________________________________
+    |Great you chose: jo          |
+    |________________________________|
+    
+2024-12-06 16:11:07Client got message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 16:11:10Client got another message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 16:11:10Client got message from Server: !|  Choose a valid option and try again   |
+2024-12-06 16:11:15Client got another message from Server: !|  Choose a valid option and try again   |
+2024-12-06 16:11:15Client got message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 16:11:17Client got another message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 16:11:17Client got message from Server: !|  Choose a valid option and try again   |
+2024-12-06 16:11:18Client got another message from Server: !|  Choose a valid option and try again   |
+2024-12-06 16:11:18Client got message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 16:11:21Client got another message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 16:11:21Client got message from Server: !|  Choose a valid option and try again   |
+2024-12-06 16:11:23Client Disconnected from KeyBoard
+2024-12-06 16:17:02Attempting to connect to 127.0.0.1 on port: 50505...
+2024-12-06 16:17:02Connection from client at: ('127.0.0.1', 42876) with chosen name: 
+2024-12-06 16:17:02Current connections: 1 from IP 127.0.0.1
+2024-12-06 16:17:02Client got message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 16:17:03Client got another message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 16:17:03User a added to current players
+2024-12-06 16:17:03Client got another message from Server: 
+    __________________________________
+    |Great you chose: a          |
+    |________________________________|
+    
+2024-12-06 16:17:03Client got message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 16:17:06Client got another message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 16:17:06Client got message from Server: !|  Choose a valid option and try again   |
+2024-12-06 16:17:07Client got another message from Server: !|  Choose a valid option and try again   |
+2024-12-06 16:17:07Client got message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 16:17:07Client got another message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 16:17:07Client got message from Server: !|  Choose a valid option and try again   |
+2024-12-06 16:17:08Client got another message from Server: !|  Choose a valid option and try again   |
+2024-12-06 16:17:08Client got message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 16:17:08Client got another message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 16:17:08Client got message from Server: !|  Choose a valid option and try again   |
+2024-12-06 16:17:08Client got another message from Server: !|  Choose a valid option and try again   |
+2024-12-06 16:17:08Client got message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 16:17:09Client got another message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 16:17:09Client got message from Server: !|  Choose a valid option and try again   |
+2024-12-06 16:17:10Client got another message from Server: !|  Choose a valid option and try again   |
+2024-12-06 16:17:10Client got message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 16:17:10a Selected Category Animal
+2024-12-06 16:17:18Client got another message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 16:17:18Client got message from Server: !|  Choose a valid option and try again   |
+2024-12-06 16:17:23Client got another message from Server: !|  Choose a valid option and try again   |
+2024-12-06 16:17:23Client got message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 16:17:24Client got another message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 16:17:24Client got message from Server: !|  Choose a valid option and try again   |
+2024-12-06 16:17:24Client got another message from Server: !|  Choose a valid option and try again   |
+2024-12-06 16:17:24Client got message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 16:17:24Client got another message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 16:17:24Client got message from Server: !|  Choose a valid option and try again   |
+2024-12-06 16:17:25Client got another message from Server: !|  Choose a valid option and try again   |
+2024-12-06 16:17:25Client got message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 16:17:25Client got another message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 16:17:25Client got another message from Server: 
+    __________________________________
+    |Great you chose: Animal          |
+    |________________________________|
+    
+2024-12-06 16:17:25Client got another message from Server: 
+    _____________________________________
+    |  What Mammal has the Thickest Fur? |
+    |           A: Sea Otter            |
+    |           B: Moose                |
+    |           C: Bear                 |
+    |___________________________________|
+    
+2024-12-06 16:17:25Client got message from Server: !1
+2024-12-06 16:17:25Client got another message from Server: !1
+2024-12-06 16:17:25Client got another message from Server: 
+    __________________________________
+    |             Correct!           |
+    |________________________________|
+    
+2024-12-06 16:17:25Client got another message from Server: ______________________SCOREBOARD___________________
+a: 1
+___________________________________________________
+
+2024-12-06 16:17:25Client got another message from Server: 
+    _____________________________________________
+    |  What Animal Has The Highest Blood Pressue? |
+    |               A: Rabbits                   |
+    |               B: Giraffe                   |
+    |               C: Cows                      |
+    |____________________________________________|
+    
+2024-12-06 16:17:25Client got message from Server: !2
+2024-12-06 16:18:00Client got another message from Server: !2
+2024-12-06 16:18:00Client got another message from Server: 
+    __________________________________
+    |            Incorrect!          |
+    |________________________________|
+    
+2024-12-06 16:18:00Client got another message from Server: ______________________SCOREBOARD___________________
+a: 1
+___________________________________________________
+
+2024-12-06 16:18:00Client got another message from Server: 
+    _____________________________________
+    |  What is a group of cats called?    |
+    |           A: Clowder               |
+    |           B: Murder                |
+    |           C: Huddle                |
+    |____________________________________|
+    
+2024-12-06 16:18:00Client got message from Server: !3
+2024-12-06 16:18:02Client got another message from Server: !3
+2024-12-06 16:18:02Client got another message from Server: Please make sure your answer is A, B or C
+2024-12-06 16:18:02Client got another message from Server: Please make sure your answer is A, B or C
+2024-12-06 16:18:02Client got another message from Server: Please make sure your answer is A, B or C
+2024-12-06 16:18:02Client got another message from Server: Please make sure your answer is A, B or C
+2024-12-06 16:18:02Client got another message from Server: Please make sure your answer is A, B or C
+2024-12-06 16:18:02Client got another message from Server: Please make sure your answer is A, B or C
+2024-12-06 16:18:02Client got another message from Server: Please make sure your answer is A, B or C
+2024-12-06 16:18:02Client got another message from Server: Please make sure your answer is A, B or C
+2024-12-06 16:18:06Client Disconnected from KeyBoard
