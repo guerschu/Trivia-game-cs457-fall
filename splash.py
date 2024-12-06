@@ -116,11 +116,11 @@ def howToAnswer():
 def animal_question0():
     return '''
     _____________________________________
-    |  What Mammal has the Thickest Fur? |
-    |           A: Sea Otter            |
-    |           B: Moose                |
-    |           C: Bear                 |
-    |___________________________________|
+    |Q1:What Mammal has the Thickest Fur? |
+    |           A: Sea Otter              |
+    |           B: Moose                  |
+    |           C: Bear                   |
+    |_____________________________________|
     '''
 
 # Answer Sea Otter
@@ -128,7 +128,7 @@ def animal_question0():
 def animal_question1():
     return '''
     _____________________________________________
-    |  What Animal Has The Highest Blood Pressue? |
+    |Q2 What Animal Has The Highest Blood Pressue? |
     |               A: Rabbits                   |
     |               B: Giraffe                   |
     |               C: Cows                      |
@@ -139,7 +139,7 @@ def animal_question1():
 def animal_question2():
     return '''
     _____________________________________
-    |  What is a group of cats called?    |
+    |Q3 What is a group of cats called?  |
     |           A: Clowder               |
     |           B: Murder                |
     |           C: Huddle                |
@@ -150,7 +150,7 @@ def animal_question2():
 def animal_question3():
     return '''
     _______________________________________________
-    | What mammal has the most powerful bite force? |
+    |q4 What mammal has the most powerful bite force? |
     |               A: Hippo                       |
     |               B: Gater                       |
     |               C: Snaping Turtle              |
@@ -161,7 +161,7 @@ def animal_question3():
 def animal_question4():
     return '''
     _________________________________________________________________
-    | What of the animals below does not die soon after giving birth? |
+    | q5 What of the animals below does not die soon after giving birth? |
     |               A: Octopus                                       |
     |               B: Salmon                                        |
     |               C: Cicadas                                       |
@@ -172,7 +172,7 @@ def animal_question4():
 def animal_question5():
     return '''
     __________________________________________________
-    | What animals have teeth that never stop growing? |
+    | Q6 What animals have teeth that never stop growing? |
     |               A: gaters                         |
     |               B: rodents                        |
     |               C: sharks                         |

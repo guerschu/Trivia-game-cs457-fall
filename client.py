@@ -43,8 +43,7 @@ def start():
                 if message[0] == "!":
                     print(f"Server: {message}")
                     log.logIt(f"Client got message from Server: {message}")
-                    user_input = input("Response: ")
-                    send("!" + user_input)
+                    send("!"+input("Response: "))
                 print(f"Server: {message}")
                 log.logIt(f"Client got another message from Server: {message}")
                 #if meeting proper conditons about game ask for user input to send
