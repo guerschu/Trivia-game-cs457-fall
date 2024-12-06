@@ -72,7 +72,6 @@ Questions ={
     "location": {"1": splash.location_questions0, "2": splash.location_questions1, "3": splash.location_questions2, "4": splash.location_questions3, "5": splash.location_questions4, "6":splash.location_questions5}
 }
 
-players_answers = defaultdict(list)
 
 #program starts here
 if len(sys.argv) != 3 or sys.argv[1] != "-p":
@@ -157,7 +156,6 @@ def serve_client(conn, addr, barrier):
                         lobby[players[usrn]["SEL"]][usrn] = players[usrn]
                         update_lobby(players[usrn]["SEL"])
                         inlobby = True
-                        players_answers[usrn] = players[usrn]
             log.logIt(f"Client at addr says: {message}")
     #print(players)
     selection = players[usrn]["SEL"]
@@ -179,7 +177,6 @@ def serve_client(conn, addr, barrier):
                 if msg_len:
                     msg_len = int(msg_len)
                     message = conn.recv(msg_len).decode('utf-8')
-                    players_answers[players[usrn]].append(message[1:])
                     try:
                         if players[usrn] == usrn:
                             print(f"{usrn} Answered: {i} with {message[1:]}")
@@ -206,11 +203,6 @@ def serve_client(conn, addr, barrier):
                     else:
                         log.logIt(f"{players[usrn]} put in an invalid input")
                         send(conn, splash.invalidInput())
-
-                    j=1
-                    for j in players_answers:
-                        if len(players_answers[j]) == i:
-                            send(conn, splash.scoreBoard(players))
 
                     if i == 6:
                         send(conn, splash.winCondition(lobby[selection]))
