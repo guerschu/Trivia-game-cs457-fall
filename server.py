@@ -158,7 +158,7 @@ def serve_client(conn, addr):
         send(conn, splash.waiting())
         await_lobby(selection)
         if serve_client_lobby(conn, addr, usrn, selection):
-            #select lobby/options operation
+            #select lobby/options operation -> repeats the action, essentially
             pass
         else:
             #disconnect user operations
@@ -209,6 +209,7 @@ def serve_client_lobby(conn, addr, usrn, selection):
         ans = validate_answer(send_recieve(conn, ["!"+i])[0], conn) #gather answer
         lobby[selection][usrn].update({"Done": True})
         print("Gathered answer")
+        send(conn, splash.wait_answers())
         await_others(selection) #Wait for all users in lobby to answer to move on, if this player hasn't answered -> idk what to do with this special case
         print("done awaiting")
         check_answer(usrn, ans, selection, i, conn) #Check answer
@@ -223,7 +224,7 @@ def serve_client_lobby(conn, addr, usrn, selection):
 
 def run_server():
     try:
-        server.listen()  # Maximum number of clients to queue
+        server.listen()  # Maximum number of clients to queue, unlimited
         while True:
             conn, addr = server.accept()
             thread = threading.Thread(target=serve_client, args=(conn, addr))

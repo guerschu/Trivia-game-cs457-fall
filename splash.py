@@ -59,6 +59,14 @@ def waiting():
     |           2 Players Min           |
     |___________________________________|
     '''
+    
+def wait_answers():
+    return '''
+    _______________________________________
+    | Waiting For Other Players To Answer |
+    |                                     |
+    |_____________________________________|
+    '''   
 
 def scoreBoard(players):
     
