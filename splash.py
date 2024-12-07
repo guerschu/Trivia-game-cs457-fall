@@ -56,6 +56,7 @@ def waiting():
     return '''
     _____________________________________
     | Waiting For Other Players To Join |
+    |           2 Players Min           |
     |___________________________________|
     '''
 
