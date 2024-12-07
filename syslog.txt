@@ -2419,3 +2419,94 @@ ___________________________________________________
 2024-12-06 16:18:02Client got another message from Server: Please make sure your answer is A, B or C
 2024-12-06 16:18:02Client got another message from Server: Please make sure your answer is A, B or C
 2024-12-06 16:18:06Client Disconnected from KeyBoard
+2024-12-06 17:03:49Attempting to connect to 127.0.0.1 on port: 50505...
+2024-12-06 17:03:49Connection from client at: ('127.0.0.1', 39470) with chosen name: 
+2024-12-06 17:03:49Current connections: 1 from IP 127.0.0.1
+2024-12-06 17:03:49Client got message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 17:03:52Client got another message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 17:03:52User jo added to current players
+2024-12-06 17:03:52Client got another message from Server: 
+    __________________________________
+    |Great you chose: jo          |
+    |________________________________|
+    
+2024-12-06 17:03:52Client got message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 17:03:55Client got another message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 17:03:55jo Selected Category Animal
+2024-12-06 17:03:55Client got another message from Server: 
+    __________________________________
+    |Great you chose: Animal          |
+    |________________________________|
+    
+2024-12-06 17:03:55Client got another message from Server: 
+    _____________________________________
+    |  What Mammal has the Thickest Fur? |
+    |           A: Sea Otter            |
+    |           B: Moose                |
+    |           C: Bear                 |
+    |___________________________________|
+    
+2024-12-06 17:03:55Client got message from Server: !1
+2024-12-06 17:03:59Client got another message from Server: !1
+2024-12-06 17:03:59Client got another message from Server: 
+    __________________________________
+    |             Correct!           |
+    |________________________________|
+    
+2024-12-06 17:03:59Client got another message from Server: ______________________SCOREBOARD___________________
+jo: 1
+___________________________________________________
+
+2024-12-06 17:03:59Client got another message from Server: 
+    _____________________________________________
+    |  What Animal Has The Highest Blood Pressue? |
+    |               A: Rabbits                   |
+    |               B: Giraffe                   |
+    |               C: Cows                      |
+    |____________________________________________|
+    
+2024-12-06 17:03:59Client got message from Server: !2
+2024-12-06 17:04:01Client got another message from Server: !2
+2024-12-06 17:04:01Client got another message from Server: 
+    __________________________________
+    |            Incorrect!          |
+    |________________________________|
+    
+2024-12-06 17:04:01Client got another message from Server: ______________________SCOREBOARD___________________
+jo: 1
+___________________________________________________
+
+2024-12-06 17:04:01Client got another message from Server: 
+    _____________________________________
+    |  What is a group of cats called?    |
+    |           A: Clowder               |
+    |           B: Murder                |
+    |           C: Huddle                |
+    |____________________________________|
+    
+2024-12-06 17:04:01Client got message from Server: !3
+2024-12-06 17:04:06Client got another message from Server: !3
+2024-12-06 17:04:06Client got another message from Server: Please make sure your answer is A, B or C
+2024-12-06 17:04:14Client Disconnected from KeyBoard
