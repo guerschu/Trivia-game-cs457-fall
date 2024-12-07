@@ -162,20 +162,22 @@ def serve_client(conn, addr):
     usrn = send_recieve(conn, [need_info[0]])[0]
     send(conn, splash.youChose(usrn))
     create_user(conn, addr, usrn)
-    player_into_lobby(conn, addr, usrn, send_recieve(conn, [need_info[1]])[0])
-    #print(players)
-    selection = players[usrn]["SEL"]
-    send(conn, splash.waiting())
-    await_lobby(selection)
-    if serve_client_lobby(conn, addr, usrn, selection):
-        #select lobby/options operation
-        pass
-    else:
-        #disconnect user operations
-        send(conn, splash.thanksForPlaying())
-        send(conn, "DISCON")
-        remove_player(usrn)
-        conn.close()
+    while True:
+        player_into_lobby(conn, addr, usrn, send_recieve(conn, [need_info[1]])[0])
+        #print(players)
+        selection = players[usrn]["SEL"]
+        send(conn, splash.waiting())
+        await_lobby(selection)
+        if serve_client_lobby(conn, addr, usrn, selection):
+            #select lobby/options operation
+            pass
+        else:
+            #disconnect user operations
+            send(conn, splash.thanksForPlaying())
+            send(conn, "DISCON")
+            remove_player(usrn)
+            conn.close()
+            break
 
 def validate_answer(ans, conn):
     while True:
@@ -200,6 +202,14 @@ def await_others(selection):
         for player in list(lobby[selection].keys()):
             everyone_done = players[player]["Done"]
 
+def play_again(conn):
+    ans = send_recieve(conn, ["!"+"Play again? y or n"])[0]
+    while True:
+        if ans.lower() not in ["y","n","yes","no"]:
+            ans = send_recieve(conn, ["!Please make sure your answer is y or n"])[0]
+        else:
+            return True
+
 def serve_client_lobby(conn, addr, usrn, selection):
     print("Player is playing")
     for i, func in Questions[selection].items():
@@ -215,11 +225,10 @@ def serve_client_lobby(conn, addr, usrn, selection):
         print("checked answer")
         send(conn, splash.scoreBoard(lobby[selection])) #Print scoreboard
         print("Sent scores")
-        lobby[selection][usrn].update({"Done": False})
+        lobby[selection][usrn].update({"Done": False}) #reset all users in lobby flag
     send(conn, splash.winCondition(lobby[selection]))
-    #reset all users in lobby flag
     #repeat for all questions
-    return False
+    return play_again(conn)
 
 
 def run_server():

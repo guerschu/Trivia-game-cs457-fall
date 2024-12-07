@@ -2510,3 +2510,580 @@ ___________________________________________________
 2024-12-06 17:04:06Client got another message from Server: !3
 2024-12-06 17:04:06Client got another message from Server: Please make sure your answer is A, B or C
 2024-12-06 17:04:14Client Disconnected from KeyBoard
+2024-12-06 18:29:01Attempting to connect to 127.0.0.1 on port: 50505...
+2024-12-06 18:29:01Connection from client at: ('127.0.0.1', 46658) with chosen name: 
+2024-12-06 18:29:01Current connections: 1 from IP 127.0.0.1
+2024-12-06 18:29:01Client got message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 18:29:06Client got another message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 18:29:06User jokitjo added to current players
+2024-12-06 18:29:06Client got another message from Server: 
+    __________________________________
+    |Great you chose: jokitjo          |
+    |________________________________|
+    
+2024-12-06 18:29:06Client got message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 18:29:08Client got another message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 18:29:08Client got message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+|  Choose a valid option and try again   |
+2024-12-06 18:29:09Client got another message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+|  Choose a valid option and try again   |
+2024-12-06 18:29:09Client got message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+|  Choose a valid option and try again   |
+2024-12-06 18:29:11Client got another message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+|  Choose a valid option and try again   |
+2024-12-06 18:29:11jokitjo Selected Category Animal
+2024-12-06 18:29:11Client got another message from Server: 
+    __________________________________
+    |Great you chose: Animal          |
+    |________________________________|
+    
+2024-12-06 18:29:11Client got another message from Server: 
+    _____________________________________
+    | Waiting For Other Players To Join |
+    |___________________________________|
+    
+2024-12-06 18:29:19Attempting to connect to 127.0.0.1 on port: 50505...
+2024-12-06 18:29:19Current connections: 2 from IP 127.0.0.1
+2024-12-06 18:29:19Connection from client at: ('127.0.0.1', 35132) with chosen name: 
+2024-12-06 18:29:19Client got message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 18:29:22Client got another message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 18:29:22Client got another message from Server: 
+    __________________________________
+    |Great you chose: mal          |
+    |________________________________|
+    
+2024-12-06 18:29:22User mal added to current players
+2024-12-06 18:29:23Client got message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 18:29:26Client got another message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 18:29:26Client got another message from Server: 
+    __________________________________
+    |Great you chose: Animal          |
+    |________________________________|
+    
+2024-12-06 18:29:26mal Selected Category Animal
+2024-12-06 18:29:26Client got another message from Server: 
+    _____________________________________
+    | Waiting For Other Players To Join |
+    |___________________________________|
+    
+2024-12-06 18:29:26Client got another message from Server: 
+    _____________________________________
+    |  What Mammal has the Thickest Fur? |
+    |           A: Sea Otter            |
+    |           B: Moose                |
+    |           C: Bear                 |
+    |___________________________________|
+    
+2024-12-06 18:29:26Client got another message from Server: 
+    _____________________________________
+    |  What Mammal has the Thickest Fur? |
+    |           A: Sea Otter            |
+    |           B: Moose                |
+    |           C: Bear                 |
+    |___________________________________|
+    
+2024-12-06 18:29:26Client got message from Server: !1
+2024-12-06 18:29:26Client got message from Server: !1
+2024-12-06 18:32:16Client got another message from Server: !1
+2024-12-06 18:32:16Client got another message from Server: 
+    __________________________________
+    |             Correct!           |
+    |________________________________|
+    
+2024-12-06 18:32:16Client got another message from Server: ______________________SCOREBOARD___________________
+jokitjo: 0
+mal: 1
+___________________________________________________
+
+2024-12-06 18:32:16Client got another message from Server: 
+    _____________________________________________
+    |  What Animal Has The Highest Blood Pressue? |
+    |               A: Rabbits                   |
+    |               B: Giraffe                   |
+    |               C: Cows                      |
+    |____________________________________________|
+    
+2024-12-06 18:32:16Client got message from Server: !2
+2024-12-06 18:32:19Client got another message from Server: !1
+2024-12-06 18:32:19Client got message from Server: !Please make sure your answer is A, B or C
+2024-12-06 18:32:22Client got another message from Server: !Please make sure your answer is A, B or C
+2024-12-06 18:32:26Client got another message from Server: !2
+2024-12-06 18:32:26Client got another message from Server: 
+    __________________________________
+    |            Incorrect!          |
+    |________________________________|
+    
+2024-12-06 18:32:26Client got another message from Server: ______________________SCOREBOARD___________________
+jokitjo: 1
+mal: 1
+___________________________________________________
+
+2024-12-06 18:32:26Client got another message from Server: 
+    __________________________________
+    |             Correct!           |
+    |________________________________|
+    
+2024-12-06 18:32:26Client got another message from Server: 
+    _____________________________________
+    |  What is a group of cats called?    |
+    |           A: Clowder               |
+    |           B: Murder                |
+    |           C: Huddle                |
+    |____________________________________|
+    
+2024-12-06 18:32:26Client got another message from Server: ______________________SCOREBOARD___________________
+jokitjo: 1
+mal: 1
+___________________________________________________
+
+2024-12-06 18:32:26Client got message from Server: !3
+2024-12-06 18:32:26Client got another message from Server: 
+    _____________________________________________
+    |  What Animal Has The Highest Blood Pressue? |
+    |               A: Rabbits                   |
+    |               B: Giraffe                   |
+    |               C: Cows                      |
+    |____________________________________________|
+    
+2024-12-06 18:32:26Client got message from Server: !2
+2024-12-06 18:32:53Client got another message from Server: !2
+2024-12-06 18:32:57Client got another message from Server: !3
+2024-12-06 18:32:57Client got another message from Server: 
+    __________________________________
+    |             Correct!           |
+    |________________________________|
+    
+2024-12-06 18:32:57Client got another message from Server: 
+    __________________________________
+    |            Incorrect!          |
+    |________________________________|
+    
+2024-12-06 18:32:57Client got another message from Server: ______________________SCOREBOARD___________________
+jokitjo: 1
+mal: 2
+___________________________________________________
+
+2024-12-06 18:32:57Client got another message from Server: ______________________SCOREBOARD___________________
+jokitjo: 1
+mal: 2
+___________________________________________________
+
+2024-12-06 18:32:57Client got another message from Server: 
+    _______________________________________________
+    | What mammal has the most powerful bite force? |
+    |               A: Hippo                       |
+    |               B: Gater                       |
+    |               C: Snaping Turtle              |
+    |______________________________________________|
+    
+2024-12-06 18:32:57Client got another message from Server: 
+    _____________________________________
+    |  What is a group of cats called?    |
+    |           A: Clowder               |
+    |           B: Murder                |
+    |           C: Huddle                |
+    |____________________________________|
+    
+2024-12-06 18:32:57Client got message from Server: !4
+2024-12-06 18:32:57Client got message from Server: !3
+2024-12-06 18:35:25Client Disconnected from KeyBoard
+2024-12-06 18:35:26Client Disconnected from KeyBoard
+2024-12-06 18:36:49Attempting to connect to 127.0.0.1 on port: 50505...
+2024-12-06 18:36:49Connection from client at: ('127.0.0.1', 39682) with chosen name: 
+2024-12-06 18:36:49Current connections: 1 from IP 127.0.0.1
+2024-12-06 18:36:49Client got message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 18:36:51Attempting to connect to 127.0.0.1 on port: 50505...
+2024-12-06 18:36:51Connection from client at: ('127.0.0.1', 43802) with chosen name: 
+2024-12-06 18:36:51Current connections: 2 from IP 127.0.0.1
+2024-12-06 18:36:51Client got message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 18:37:03Client got another message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 18:37:03User jo added to current players
+2024-12-06 18:37:03Client got another message from Server: 
+    __________________________________
+    |Great you chose: jo          |
+    |________________________________|
+    
+2024-12-06 18:37:03Client got message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 18:37:06Client got another message from Server: !
+    __________________________________
+    |   Please enter your user name  |
+    |________________________________|
+    
+2024-12-06 18:37:06User mal added to current players
+2024-12-06 18:37:06Client got another message from Server: 
+    __________________________________
+    |Great you chose: mal          |
+    |________________________________|
+    
+2024-12-06 18:37:06Client got message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 18:37:10Client got another message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 18:37:10Client got another message from Server: 
+    __________________________________
+    |Great you chose: Animal          |
+    |________________________________|
+    
+2024-12-06 18:37:10jo Selected Category Animal
+2024-12-06 18:37:10Client got another message from Server: 
+    _____________________________________
+    | Waiting For Other Players To Join |
+    |___________________________________|
+    
+2024-12-06 18:37:14Client got another message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 18:37:14Client got another message from Server: 
+    __________________________________
+    |Great you chose: Animal          |
+    |________________________________|
+    
+2024-12-06 18:37:14mal Selected Category Animal
+2024-12-06 18:37:14Client got another message from Server: 
+    _____________________________________
+    | Waiting For Other Players To Join |
+    |___________________________________|
+    
+2024-12-06 18:37:14Client got another message from Server: 
+    _____________________________________
+    |  What Mammal has the Thickest Fur? |
+    |           A: Sea Otter            |
+    |           B: Moose                |
+    |           C: Bear                 |
+    |___________________________________|
+    
+2024-12-06 18:37:14Client got another message from Server: 
+    _____________________________________
+    |  What Mammal has the Thickest Fur? |
+    |           A: Sea Otter            |
+    |           B: Moose                |
+    |           C: Bear                 |
+    |___________________________________|
+    
+2024-12-06 18:37:14Client got message from Server: !1
+2024-12-06 18:37:14Client got message from Server: !1
+2024-12-06 18:37:18Client got another message from Server: !1
+2024-12-06 18:37:18Client got message from Server: !Please make sure your answer is A, B or C
+2024-12-06 18:37:21Client got another message from Server: !1
+2024-12-06 18:37:21Client got another message from Server: 
+    __________________________________
+    |             Correct!           |
+    |________________________________|
+    
+2024-12-06 18:37:21Client got another message from Server: ______________________SCOREBOARD___________________
+jo: 0
+mal: 1
+___________________________________________________
+
+2024-12-06 18:37:21Client got another message from Server: 
+    _____________________________________________
+    |  What Animal Has The Highest Blood Pressue? |
+    |               A: Rabbits                   |
+    |               B: Giraffe                   |
+    |               C: Cows                      |
+    |____________________________________________|
+    
+2024-12-06 18:37:21Client got message from Server: !2
+2024-12-06 18:38:11Client got another message from Server: !Please make sure your answer is A, B or C
+2024-12-06 18:38:14Client got another message from Server: !2
+2024-12-06 18:38:14Client got another message from Server: 
+    __________________________________
+    |            Incorrect!          |
+    |________________________________|
+    
+2024-12-06 18:38:14Client got another message from Server: 
+    __________________________________
+    |             Correct!           |
+    |________________________________|
+    
+2024-12-06 18:38:14Client got another message from Server: ______________________SCOREBOARD___________________
+jo: 0
+mal: 1
+___________________________________________________
+
+2024-12-06 18:38:14Client got another message from Server: ______________________SCOREBOARD___________________
+jo: 1
+mal: 1
+___________________________________________________
+
+2024-12-06 18:38:14Client got another message from Server: 
+    _____________________________________
+    |  What is a group of cats called?    |
+    |           A: Clowder               |
+    |           B: Murder                |
+    |           C: Huddle                |
+    |____________________________________|
+    
+2024-12-06 18:38:14Client got another message from Server: 
+    _____________________________________________
+    |  What Animal Has The Highest Blood Pressue? |
+    |               A: Rabbits                   |
+    |               B: Giraffe                   |
+    |               C: Cows                      |
+    |____________________________________________|
+    
+2024-12-06 18:38:14Client got message from Server: !3
+2024-12-06 18:38:14Client got message from Server: !2
+2024-12-06 18:38:17Client got another message from Server: !2
+2024-12-06 18:38:19Client got another message from Server: !3
+2024-12-06 18:38:19Client got another message from Server: 
+    __________________________________
+    |            Incorrect!          |
+    |________________________________|
+    
+2024-12-06 18:38:19Client got another message from Server: 
+    __________________________________
+    |            Incorrect!          |
+    |________________________________|
+    
+2024-12-06 18:38:19Client got another message from Server: ______________________SCOREBOARD___________________
+jo: 1
+mal: 1
+___________________________________________________
+
+2024-12-06 18:38:19Client got another message from Server: ______________________SCOREBOARD___________________
+jo: 1
+mal: 1
+___________________________________________________
+
+2024-12-06 18:38:19Client got another message from Server: 
+    _____________________________________
+    |  What is a group of cats called?    |
+    |           A: Clowder               |
+    |           B: Murder                |
+    |           C: Huddle                |
+    |____________________________________|
+    
+2024-12-06 18:38:19Client got another message from Server: 
+    _______________________________________________
+    | What mammal has the most powerful bite force? |
+    |               A: Hippo                       |
+    |               B: Gater                       |
+    |               C: Snaping Turtle              |
+    |______________________________________________|
+    
+2024-12-06 18:38:19Client got message from Server: !3
+2024-12-06 18:38:19Client got message from Server: !4
+2024-12-06 18:38:20Client got another message from Server: !4
+2024-12-06 18:38:20Client got another message from Server: 
+    __________________________________
+    |             Correct!           |
+    |________________________________|
+    
+2024-12-06 18:38:20Client got another message from Server: ______________________SCOREBOARD___________________
+jo: 1
+mal: 2
+___________________________________________________
+
+2024-12-06 18:38:20Client got another message from Server: 
+    _________________________________________________________________
+    | What of the animals below does not die soon after giving birth? |
+    |               A: Octopus                                       |
+    |               B: Salmon                                        |
+    |               C: Cicadas                                       |
+    |________________________________________________________________|
+    
+2024-12-06 18:38:20Client got message from Server: !5
+2024-12-06 18:38:22Client got another message from Server: !5
+2024-12-06 18:38:22Client got another message from Server: 
+    __________________________________
+    |            Incorrect!          |
+    |________________________________|
+    
+2024-12-06 18:38:22Client got another message from Server: ______________________SCOREBOARD___________________
+jo: 1
+mal: 2
+___________________________________________________
+
+2024-12-06 18:38:22Client got another message from Server: 
+    __________________________________________________
+    | What animals have teeth that never stop growing? |
+    |               A: gaters                         |
+    |               B: rodents                        |
+    |               C: sharks                         |
+    |_________________________________________________|
+    
+2024-12-06 18:38:22Client got message from Server: !6
+2024-12-06 18:38:24Client got another message from Server: !6
+2024-12-06 18:38:24Client got another message from Server: 
+    __________________________________
+    |            Incorrect!          |
+    |________________________________|
+    
+2024-12-06 18:38:24Client got another message from Server: ______________________SCOREBOARD___________________
+jo: 1
+mal: 2
+___________________________________________________
+
+2024-12-06 18:38:24Client got another message from Server: ___________________________________________________________
+| mal Wins with a Score of: 2  |
+___________________________________________________________
+
+2024-12-06 18:38:24Client got message from Server: !Play again? y or n
+2024-12-06 18:38:31Client got another message from Server: !Play again? y or n
+2024-12-06 18:38:31Client got message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 18:38:33Client got another message from Server: !
+    __________________________________
+    |  Choose your trivia category!  |
+    |         Type: Animal           |
+    |         Type: History          |
+    |         Type: Location         |
+    |________________________________|
+    
+2024-12-06 18:38:33mal Selected Category Animal
+2024-12-06 18:38:33Client got another message from Server: 
+    __________________________________
+    |Great you chose: Animal          |
+    |________________________________|
+    
+2024-12-06 18:38:33Client got another message from Server: 
+    _____________________________________
+    | Waiting For Other Players To Join |
+    |___________________________________|
+    
+2024-12-06 18:38:33Client got another message from Server: 
+    _____________________________________
+    |  What Mammal has the Thickest Fur? |
+    |           A: Sea Otter            |
+    |           B: Moose                |
+    |           C: Bear                 |
+    |___________________________________|
+    
+2024-12-06 18:38:33Client got message from Server: !1
+2024-12-06 18:38:36Client got another message from Server: !1
+2024-12-06 18:38:36Client got another message from Server: 
+    __________________________________
+    |             Correct!           |
+    |________________________________|
+    
+2024-12-06 18:38:36Client got another message from Server: ______________________SCOREBOARD___________________
+jo: 1
+mal: 3
+___________________________________________________
+
+2024-12-06 18:38:36Client got another message from Server: 
+    _____________________________________________
+    |  What Animal Has The Highest Blood Pressue? |
+    |               A: Rabbits                   |
+    |               B: Giraffe                   |
+    |               C: Cows                      |
+    |____________________________________________|
+    
+2024-12-06 18:38:36Client got message from Server: !2
+2024-12-06 18:38:44Client Disconnected from KeyBoard
+2024-12-06 18:38:45Client Disconnected from KeyBoard
