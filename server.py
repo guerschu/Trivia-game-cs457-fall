@@ -10,7 +10,7 @@ players = {
         "IP":"0.0.0.0",
         "GP":-1,
         "SEL":"giraffe",
-        "Done": False,
+        "Done": True,
         "Name": "admin"
         }
 }
@@ -21,7 +21,7 @@ lobby = {
         "IP":"0.0.0.0",
         "GP":-1,
         "SEL":"giraffe",
-        "Done": False,
+        "Done": True,
         "Name": "admin"
         }
     },
@@ -30,7 +30,7 @@ lobby = {
         "IP":"0.0.0.0",
         "GP":-1,
         "SEL":"giraffe",
-        "Done": False,
+        "Done": True,
         "Name": "admin"
         }
     },
@@ -39,7 +39,7 @@ lobby = {
         "IP":"0.0.0.0",
         "GP":-1,
         "SEL":"giraffe",
-        "Done": False,
+        "Done": True,
         "Name": "admin"
         }
     }
@@ -158,7 +158,7 @@ def serve_client(conn, addr):
         send(conn, splash.waiting())
         await_lobby(selection)
         if serve_client_lobby(conn, addr, usrn, selection):
-            #select lobby/options operation
+            #select lobby/options operation -> repeats the action, essentially
             pass
         else:
             #disconnect user operations
@@ -170,10 +170,10 @@ def serve_client(conn, addr):
 
 def validate_answer(ans, conn):
     while True:
-        if ans not in ["A", "B", "C"]:
-            ans = send_recieve(conn, ["!Please make sure your answer is A, B or C"])[0]
-        else:
+        if ans.lower() in ["a", "b", "c"]:
             return ans
+        else:
+            ans = send_recieve(conn, ["!Please make sure your answer is A, B or C"])[0]
 
 def check_answer(usrn, ans, selection, map, conn):
     if Answers[selection][map] == ans:
@@ -183,21 +183,22 @@ def check_answer(usrn, ans, selection, map, conn):
         send(conn, splash.wrong())
 
 def await_others(selection):
-    start_time = time.time()
-    everyone_done = False
-    while not everyone_done:
-        if (start_time - time.time() >= 10): #incase anyone false behind the game doesnt hang
-            break
-        for player in list(lobby[selection].keys()):
-            everyone_done = players[player]["Done"]
+    lobby_players = list(lobby[selection].keys())
+    i = 0
+    while i < len(lobby_players):
+        if players[lobby_players[i]]["Done"]:
+            i += 1
+            
 
 def play_again(conn):
     ans = send_recieve(conn, ["!"+"Play again? y or n"])[0]
     while True:
         if ans.lower() not in ["y","n","yes","no"]:
             ans = send_recieve(conn, ["!Please make sure your answer is y or n"])[0]
-        else:
+        elif ans.lower in ["y","yes"]:
             return True
+        else:
+            return False
 
 def serve_client_lobby(conn, addr, usrn, selection):
     print("Player is playing")
@@ -208,6 +209,7 @@ def serve_client_lobby(conn, addr, usrn, selection):
         ans = validate_answer(send_recieve(conn, ["!"+i])[0], conn) #gather answer
         lobby[selection][usrn].update({"Done": True})
         print("Gathered answer")
+        send(conn, splash.wait_answers())
         await_others(selection) #Wait for all users in lobby to answer to move on, if this player hasn't answered -> idk what to do with this special case
         print("done awaiting")
         check_answer(usrn, ans, selection, i, conn) #Check answer
@@ -222,7 +224,7 @@ def serve_client_lobby(conn, addr, usrn, selection):
 
 def run_server():
     try:
-        server.listen()  # Maximum number of clients to queue
+        server.listen()  # Maximum number of clients to queue, unlimited
         while True:
             conn, addr = server.accept()
             thread = threading.Thread(target=serve_client, args=(conn, addr))
