@@ -127,12 +127,17 @@ def send_recieve(conn, sent_list):
     return responses
 
 def validate(conn, user_input):
-    if user_input != "" and user_input.lower() in validOptions:
-        send(conn, splash.youChose(user_input))
-        return user_input
-    else:
-        send(conn, "!|  Choose a valid option and try again   |")
-        return validate(conn, send_recieve(conn, ["!"+splash.options()])[0])
+    while True:
+        if user_input != "" and user_input.lower() in validOptions:
+            send(conn, splash.youChose(user_input))
+            return user_input
+        else:
+            user_input = send_recieve(conn, ["!"+splash.options()+"\n|  Choose a valid option and try again   |"])[0]
+
+def await_lobby(selection):
+    while not lobby_status(selection):
+        pass
+    pass
 
 def player_into_lobby(conn, addr, usrn, selection):
     selection = validate(conn, selection)
@@ -160,6 +165,8 @@ def serve_client(conn, addr):
     player_into_lobby(conn, addr, usrn, send_recieve(conn, [need_info[1]])[0])
     #print(players)
     selection = players[usrn]["SEL"]
+    send(conn, splash.waiting())
+    await_lobby(selection)
     if serve_client_lobby(conn, addr, usrn, selection):
         #select lobby/options operation
         pass
@@ -171,13 +178,14 @@ def serve_client(conn, addr):
         conn.close()
 
 def validate_answer(ans, conn):
-    if ans not in ["A", "B", "C"]:
-        validate_answer(send_recieve(conn, ["Please make sure your answer is A, B or C"])[0], conn)
-    else:
-        return ans
+    while True:
+        if ans not in ["A", "B", "C"]:
+            ans = send_recieve(conn, ["!Please make sure your answer is A, B or C"])[0]
+        else:
+            return ans
 
 def check_answer(usrn, ans, selection, map, conn):
-    if Answers[selection][map] == validate_answer(ans, conn):
+    if Answers[selection][map] == ans:
         lobby[selection][usrn].update({"GP": lobby[selection][usrn]["GP"] + 1})
         send(conn, splash.correct())
     else:
@@ -198,7 +206,7 @@ def serve_client_lobby(conn, addr, usrn, selection):
         print(i)
         send(conn, func())#Give user a question
         print("Sent question")
-        ans = send_recieve(conn, ["!"+i])[0] #gather answer
+        ans = validate_answer(send_recieve(conn, ["!"+i])[0], conn) #gather answer
         lobby[selection][usrn].update({"Done": True})
         print("Gathered answer")
         await_others(selection) #Wait for all users in lobby to answer to move on, if this player hasn't answered -> idk what to do with this special case
