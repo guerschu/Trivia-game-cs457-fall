@@ -71,17 +71,6 @@ Questions ={
     "history": {"1": splash.history_questions0, "2": splash.history_questions1, "3": splash.history_questions2, "4": splash.history_questions3, "5": splash.history_questions4, "6": splash.history_questions5},
     "locations": {"1": splash.location_questions0, "2": splash.location_questions1, "3": splash.location_questions2, "4": splash.location_questions3, "5": splash.location_questions4, "6":splash.location_questions5}
 }
-
-#program starts here
-if len(sys.argv) != 3 or sys.argv[1] != "-p":
-    print("usage:", sys.argv[0], "-p <PORT>")
-    sys.exit(1)
-
-port = int(sys.argv[2])
-
-server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-# server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-
 validOptions = ["animal","exit","history","location"]
 
 
@@ -243,6 +232,17 @@ def run_server():
             print(strcur + " From " + addr[0])
     except KeyboardInterrupt:
         print("Service interupted by admin, exiting...")
+
+#program starts here
+if len(sys.argv) != 3 or sys.argv[1] != "-p":
+    print("usage:", sys.argv[0], "-p <PORT>")
+    sys.exit(1)
+
+port = int(sys.argv[2])
+
+server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+# server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+
 
 server.bind(('0.0.0.0', port))  # Listen on all interfaces
 print("Server running on: 0.0.0.0, Listening on:", port)
